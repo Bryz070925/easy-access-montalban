@@ -1,6 +1,6 @@
 // Offline support: cache the app shell so hotlines and requirements
 // are still available without signal. Bump VERSION when files change.
-var VERSION = "easy-access-v5";
+var VERSION = "easy-access-v6";
 var FILES = ["./", "index.html", "styles.css", "app.js", "data.js", "manifest.json", "img/montalban-logo.jpg", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", function (e) {
@@ -16,10 +16,12 @@ self.addEventListener("activate", function (e) {
 });
 
 // Network first (so updates show up), fall back to cache when offline.
+// cache: "no-cache" makes the browser check the server instead of reusing
+// its HTTP cache, which GitHub Pages lets it keep for 10 minutes.
 self.addEventListener("fetch", function (e) {
   if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
   e.respondWith(
-    fetch(e.request).then(function (res) {
+    fetch(e.request.url, { cache: "no-cache" }).then(function (res) {
       var copy = res.clone();
       caches.open(VERSION).then(function (c) { c.put(e.request, copy); });
       return res;
