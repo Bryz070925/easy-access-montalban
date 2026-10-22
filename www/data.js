@@ -14,15 +14,15 @@ window.APP_DATA = {
   },
 
   hotlines: [
-    { id: "911", group: "emergency", name: { fil: "Montalban Hotline 911 (Emergency)", en: "Montalban Hotline 911 (Emergency)" }, phone: "911", icon: "🚨" },
-    { id: "8888", group: "emergency", name: { fil: "Citizens' Complaint Hotline", en: "Citizens' Complaint Hotline" }, phone: "8888", icon: "📣" },
-    { id: "redcross", group: "emergency", name: { fil: "Philippine Red Cross", en: "Philippine Red Cross" }, phone: "143", icon: "➕" },
-    { id: "mdrrmo", group: "local", name: { fil: "MDRRMO (Rescue / Kalamidad)", en: "MDRRMO (Rescue / Disaster)" }, phone: null, icon: "🛟" },
-    { id: "pnp", group: "local", name: { fil: "Rodriguez Municipal Police Station", en: "Rodriguez Municipal Police Station" }, phone: null, icon: "👮" },
-    { id: "bfp", group: "local", name: { fil: "Bureau of Fire Protection – Rodriguez", en: "Bureau of Fire Protection – Rodriguez" }, phone: null, icon: "🚒" },
-    { id: "rhu", group: "local", name: { fil: "Rural Health Unit / Municipal Health Office", en: "Rural Health Unit / Municipal Health Office" }, phone: null, icon: "🏥" },
-    { id: "mswdo", group: "local", name: { fil: "MSWDO (Social Welfare)", en: "MSWDO (Social Welfare)" }, phone: null, icon: "🤝" },
-    { id: "townhall", group: "local", name: { fil: "Munisipyo (Trunkline)", en: "Municipal Hall (Trunkline)" }, phone: null, icon: "🏛️" }
+    { id: "911", group: "emergency", name: { fil: "Montalban Hotline 911 (Emergency)", en: "Montalban Hotline 911 (Emergency)" }, phone: "911", icon: "siren" },
+    { id: "8888", group: "emergency", name: { fil: "Citizens' Complaint Hotline", en: "Citizens' Complaint Hotline" }, phone: "8888", icon: "megaphone" },
+    { id: "redcross", group: "emergency", name: { fil: "Philippine Red Cross", en: "Philippine Red Cross" }, phone: "143", icon: "cross" },
+    { id: "mdrrmo", group: "local", name: { fil: "MDRRMO (Rescue / Kalamidad)", en: "MDRRMO (Rescue / Disaster)" }, phone: null, icon: "life-buoy" },
+    { id: "pnp", group: "local", name: { fil: "Rodriguez Municipal Police Station", en: "Rodriguez Municipal Police Station" }, phone: null, icon: "shield" },
+    { id: "bfp", group: "local", name: { fil: "Bureau of Fire Protection – Rodriguez", en: "Bureau of Fire Protection – Rodriguez" }, phone: null, icon: "flame" },
+    { id: "rhu", group: "local", name: { fil: "Rural Health Unit / Municipal Health Office", en: "Rural Health Unit / Municipal Health Office" }, phone: null, icon: "hospital" },
+    { id: "mswdo", group: "local", name: { fil: "MSWDO (Social Welfare)", en: "MSWDO (Social Welfare)" }, phone: null, icon: "hand-heart" },
+    { id: "townhall", group: "local", name: { fil: "Munisipyo (Trunkline)", en: "Municipal Hall (Trunkline)" }, phone: null, icon: "landmark" }
   ],
 
   // Municipal offices. `hours` uses days 0=Sun … 6=Sat and 24h times in
@@ -30,21 +30,21 @@ window.APP_DATA = {
   // office its own array to override it. `room: null`
   // shows "To be added". `map` is a Google Maps search query.
   offices: [
-    { id: "mayor", icon: "🏛️", name: { fil: "Tanggapan ng Mayor", en: "Office of the Mayor" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
-    { id: "treasurer", icon: "💰", name: { fil: "Municipal Treasurer's Office", en: "Municipal Treasurer's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
+    { id: "mayor", icon: "landmark", name: { fil: "Tanggapan ng Mayor", en: "Office of the Mayor" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
+    { id: "treasurer", icon: "wallet", name: { fil: "Municipal Treasurer's Office", en: "Municipal Treasurer's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Cedula, bayad sa amilyar at iba pang buwis", en: "Cedula, real property tax and other payments" } },
-    { id: "assessor", icon: "📐", name: { fil: "Municipal Assessor's Office", en: "Municipal Assessor's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
+    { id: "assessor", icon: "ruler", name: { fil: "Municipal Assessor's Office", en: "Municipal Assessor's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Tax declaration ng lupa at bahay", en: "Tax declarations for land and buildings" } },
-    { id: "civil-registrar", icon: "📜", name: { fil: "Municipal Civil Registrar", en: "Municipal Civil Registrar" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
+    { id: "civil-registrar", icon: "scroll-text", name: { fil: "Municipal Civil Registrar", en: "Municipal Civil Registrar" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Birth, kasal at death certificate", en: "Birth, marriage and death certificates" } },
-    { id: "bplo", icon: "🏪", name: { fil: "Business Permits and Licensing Office (BPLO)", en: "Business Permits and Licensing Office (BPLO)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
-    { id: "engineering", icon: "🏗️", name: { fil: "Municipal Engineering Office", en: "Municipal Engineering Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
-    { id: "mswdo", icon: "🤝", name: { fil: "MSWDO (Social Welfare)", en: "MSWDO (Social Welfare)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
+    { id: "bplo", icon: "store", name: { fil: "Business Permits and Licensing Office (BPLO)", en: "Business Permits and Licensing Office (BPLO)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
+    { id: "engineering", icon: "hard-hat", name: { fil: "Municipal Engineering Office", en: "Municipal Engineering Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
+    { id: "mswdo", icon: "hand-heart", name: { fil: "MSWDO (Social Welfare)", en: "MSWDO (Social Welfare)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Solo parent, ayuda at iba pang tulong", en: "Solo parent, assistance and other aid" } },
-    { id: "osca", icon: "👵", name: { fil: "OSCA (Office of Senior Citizens Affairs)", en: "OSCA (Office of Senior Citizens Affairs)" }, building: null, room: null, map: "OSCA Rodriguez Rizal", hours: "standard", phone: null },
-    { id: "pdao", icon: "♿", name: { fil: "PDAO (Persons with Disability Affairs Office)", en: "PDAO (Persons with Disability Affairs Office)" }, building: null, room: null, map: "PDAO Rodriguez Rizal", hours: "standard", phone: null },
-    { id: "rhu", icon: "🏥", name: { fil: "Rural Health Unit / Municipal Health Office", en: "Rural Health Unit / Municipal Health Office" }, building: null, room: null, map: "Rural Health Unit Rodriguez Rizal", hours: "standard", phone: null },
-    { id: "mdrrmo", icon: "🛟", name: { fil: "MDRRMO (Rescue / Kalamidad)", en: "MDRRMO (Rescue / Disaster)" }, building: null, room: null, map: "MDRRMO Rodriguez Rizal", hours: "standard", phone: null,
+    { id: "osca", icon: "user-round", name: { fil: "OSCA (Office of Senior Citizens Affairs)", en: "OSCA (Office of Senior Citizens Affairs)" }, building: null, room: null, map: "OSCA Rodriguez Rizal", hours: "standard", phone: null },
+    { id: "pdao", icon: "accessibility", name: { fil: "PDAO (Persons with Disability Affairs Office)", en: "PDAO (Persons with Disability Affairs Office)" }, building: null, room: null, map: "PDAO Rodriguez Rizal", hours: "standard", phone: null },
+    { id: "rhu", icon: "hospital", name: { fil: "Rural Health Unit / Municipal Health Office", en: "Rural Health Unit / Municipal Health Office" }, building: null, room: null, map: "Rural Health Unit Rodriguez Rizal", hours: "standard", phone: null },
+    { id: "mdrrmo", icon: "life-buoy", name: { fil: "MDRRMO (Rescue / Kalamidad)", en: "MDRRMO (Rescue / Disaster)" }, building: null, room: null, map: "MDRRMO Rodriguez Rizal", hours: "standard", phone: null,
       note: { fil: "Opisina lang ito. Sa emergency, tumawag sa 911.", en: "Office hours only. In an emergency, call 911." } }
   ],
 
@@ -62,7 +62,7 @@ window.APP_DATA = {
     {
       id: "cedula",
       officeId: "treasurer",
-      icon: "🪪",
+      icon: "id-card",
       office: { fil: "Municipal Treasurer's Office", en: "Municipal Treasurer's Office" },
       name: { fil: "Cedula (Community Tax Certificate)", en: "Cedula (Community Tax Certificate)" },
       requirements: {
@@ -72,7 +72,7 @@ window.APP_DATA = {
     },
     {
       id: "brgy-clearance",
-      icon: "📄",
+      icon: "file-text",
       office: { fil: "Barangay Hall ng inyong barangay", en: "Your Barangay Hall" },
       name: { fil: "Barangay Clearance", en: "Barangay Clearance" },
       requirements: {
@@ -83,7 +83,7 @@ window.APP_DATA = {
     {
       id: "birth-cert",
       officeId: "civil-registrar",
-      icon: "👶",
+      icon: "baby",
       office: { fil: "Municipal Civil Registrar", en: "Municipal Civil Registrar" },
       name: { fil: "Kopya ng Birth Certificate / Late Registration", en: "Birth Certificate Copy / Late Registration" },
       requirements: {
@@ -94,7 +94,7 @@ window.APP_DATA = {
     {
       id: "business-permit",
       officeId: "bplo",
-      icon: "🏪",
+      icon: "store",
       office: { fil: "Business Permits and Licensing Office (BPLO)", en: "Business Permits and Licensing Office (BPLO)" },
       name: { fil: "Business Permit (Bago o Renewal)", en: "Business Permit (New or Renewal)" },
       requirements: {
@@ -105,7 +105,7 @@ window.APP_DATA = {
     {
       id: "building-permit",
       officeId: "engineering",
-      icon: "🏗️",
+      icon: "hard-hat",
       office: { fil: "Municipal Engineering Office", en: "Municipal Engineering Office" },
       name: { fil: "Building Permit", en: "Building Permit" },
       requirements: {
@@ -116,7 +116,7 @@ window.APP_DATA = {
     {
       id: "senior-id",
       officeId: "osca",
-      icon: "👵",
+      icon: "user-round",
       office: { fil: "OSCA (Office of Senior Citizens Affairs)", en: "OSCA (Office of Senior Citizens Affairs)" },
       name: { fil: "Senior Citizen ID", en: "Senior Citizen ID" },
       requirements: {
@@ -127,7 +127,7 @@ window.APP_DATA = {
     {
       id: "pwd-id",
       officeId: "pdao",
-      icon: "♿",
+      icon: "accessibility",
       office: { fil: "PDAO / MSWDO", en: "PDAO / MSWDO" },
       name: { fil: "PWD ID", en: "PWD ID" },
       requirements: {
@@ -138,7 +138,7 @@ window.APP_DATA = {
     {
       id: "solo-parent",
       officeId: "mswdo",
-      icon: "👨‍👧",
+      icon: "users",
       office: { fil: "MSWDO", en: "MSWDO" },
       name: { fil: "Solo Parent ID", en: "Solo Parent ID" },
       requirements: {
@@ -154,14 +154,14 @@ window.APP_DATA = {
     email: null,
     sms: null,
     categories: [
-      { id: "road", icon: "🕳️", name: { fil: "Sirang kalsada / lubak", en: "Damaged road / pothole" } },
-      { id: "flood", icon: "🌧️", name: { fil: "Baha / baradong kanal", en: "Flooding / clogged drainage" } },
-      { id: "garbage", icon: "🗑️", name: { fil: "Basura na hindi nakokolekta", en: "Uncollected garbage" } },
-      { id: "light", icon: "💡", name: { fil: "Patay na ilaw sa kalye", en: "Broken streetlight" } },
-      { id: "water", icon: "🚰", name: { fil: "Tagas o problema sa tubig", en: "Water leak or supply problem" } },
-      { id: "tree", icon: "🌳", name: { fil: "Natumbang puno / sanga", en: "Fallen tree / branch" } },
-      { id: "noise", icon: "🔊", name: { fil: "Ingay / istorbo", en: "Noise / disturbance" } },
-      { id: "other", icon: "❓", name: { fil: "Iba pa", en: "Other" } }
+      { id: "road", icon: "construction", name: { fil: "Sirang kalsada / lubak", en: "Damaged road / pothole" } },
+      { id: "flood", icon: "cloud-rain", name: { fil: "Baha / baradong kanal", en: "Flooding / clogged drainage" } },
+      { id: "garbage", icon: "trash-2", name: { fil: "Basura na hindi nakokolekta", en: "Uncollected garbage" } },
+      { id: "light", icon: "lightbulb", name: { fil: "Patay na ilaw sa kalye", en: "Broken streetlight" } },
+      { id: "water", icon: "droplets", name: { fil: "Tagas o problema sa tubig", en: "Water leak or supply problem" } },
+      { id: "tree", icon: "tree-pine", name: { fil: "Natumbang puno / sanga", en: "Fallen tree / branch" } },
+      { id: "noise", icon: "volume-2", name: { fil: "Ingay / istorbo", en: "Noise / disturbance" } },
+      { id: "other", icon: "circle-help", name: { fil: "Iba pa", en: "Other" } }
     ]
   },
 
@@ -173,7 +173,7 @@ window.APP_DATA = {
   places: [
     {
       id: "wawa",
-      icon: "🌊",
+      icon: "waves",
       name: "Wawa Dam",
       barangay: "San Rafael",
       desc: {
@@ -184,7 +184,7 @@ window.APP_DATA = {
     },
     {
       id: "pamitinan",
-      icon: "⛰️",
+      icon: "mountain",
       name: "Mt. Pamitinan",
       barangay: "San Rafael",
       desc: {
@@ -195,7 +195,7 @@ window.APP_DATA = {
     },
     {
       id: "binacayan",
-      icon: "🏔️",
+      icon: "mountain-snow",
       name: "Mt. Binacayan",
       barangay: "San Rafael",
       desc: {
@@ -206,7 +206,7 @@ window.APP_DATA = {
     },
     {
       id: "hapunang-banoi",
-      icon: "🧗",
+      icon: "footprints",
       name: "Mt. Hapunang Banoi",
       barangay: "San Rafael",
       desc: {
@@ -217,7 +217,7 @@ window.APP_DATA = {
     },
     {
       id: "pamitinan-cave",
-      icon: "🕳️",
+      icon: "flashlight",
       name: "Pamitinan Cave",
       barangay: "San Rafael",
       desc: {

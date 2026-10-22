@@ -51,14 +51,15 @@
       viewOffice: "Tingnan ang opisina",
       days: ["Lin", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"],
       reportTitle: "Mag-report ng Problema",
-      reportCta: "May problema sa inyong lugar? I-report dito",
+      reportCta: "May problema sa inyong lugar?",
+      reportCtaSub: "I-report ang sirang kalsada, baha, basura at iba pa",
       reportIntro: "Para sa mga hindi emergency na problema. Kung may panganib sa buhay, tumawag agad sa 911.",
       category: "Uri ng problema",
       barangay: "Barangay",
       choose: "— Pumili —",
       location: "Eksaktong lugar / palatandaan",
       locationPh: "Hal. tapat ng chapel sa Purok 3",
-      useGps: "📍 Gamitin ang aking lokasyon",
+      useGps: "Gamitin ang aking lokasyon",
       gpsOk: "Naidagdag ang lokasyon",
       gpsFail: "Hindi makuha ang lokasyon",
       details: "Ilarawan ang problema",
@@ -71,10 +72,10 @@
       sendVia: "Ipadala ang report",
       sendNote: "Ipadala sa opisyal na contact ng Munisipyo o barangay gamit ang alinman sa ibaba.",
       noChannel: "Wala pang nakumpirmang opisyal na contact ng Munisipyo para sa reports. I-share o kopyahin ang report at ipadala sa inyong barangay o sa Facebook page ng Munisipyo.",
-      share: "📤 I-share",
-      sms: "💬 SMS",
-      email: "✉️ Email",
-      copy: "📋 Kopyahin",
+      share: "I-share",
+      sms: "SMS",
+      email: "Email",
+      copy: "Kopyahin",
       copied: "Nakopya!",
       newReport: "Bagong report",
       myReports: "Aking mga Report",
@@ -127,14 +128,15 @@
       viewOffice: "View office",
       days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       reportTitle: "Report a Problem",
-      reportCta: "Problem in your area? Report it here",
+      reportCta: "Problem in your area?",
+      reportCtaSub: "Report damaged roads, flooding, garbage and more",
       reportIntro: "For non-emergency problems. If a life is in danger, call 911 right away.",
       category: "Type of problem",
       barangay: "Barangay",
       choose: "— Choose —",
       location: "Exact location / landmark",
       locationPh: "E.g. across the chapel in Purok 3",
-      useGps: "📍 Use my location",
+      useGps: "Use my location",
       gpsOk: "Location added",
       gpsFail: "Couldn't get location",
       details: "Describe the problem",
@@ -147,10 +149,10 @@
       sendVia: "Send the report",
       sendNote: "Send it to the official Municipal or barangay contact using any option below.",
       noChannel: "No official Municipal contact for reports has been confirmed yet. Share or copy the report and send it to your barangay or the Municipality's Facebook page.",
-      share: "📤 Share",
-      sms: "💬 SMS",
-      email: "✉️ Email",
-      copy: "📋 Copy",
+      share: "Share",
+      sms: "SMS",
+      email: "Email",
+      copy: "Copy",
       copied: "Copied!",
       newReport: "New report",
       myReports: "My Reports",
@@ -172,6 +174,15 @@
     });
   }
 
+  // Inline SVG icon from icons.js (Lucide).
+  function ic(name, size) {
+    return '<svg class="i" width="' + (size || 20) + '" height="' + (size || 20) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (window.ICONS[name] || "") + "</svg>";
+  }
+  function badgeIcon(name, tone) {
+    return '<span class="icon' + (tone ? " tone-" + tone : "") + '">' + ic(name, 22) + "</span>";
+  }
+
   function mapsUrl(q) {
     return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
   }
@@ -180,9 +191,9 @@
 
   function hotlineItem(h) {
     var action = h.phone
-      ? '<a class="btn" href="tel:' + esc(h.phone) + '">📞 ' + esc(h.phone) + "</a>"
+      ? '<a class="btn" href="tel:' + esc(h.phone) + '">' + ic("phone", 16) + esc(h.phone) + "</a>"
       : '<span class="pending">' + t("pending") + "</span>";
-    return '<li class="card row"><span class="icon" aria-hidden="true">' + h.icon + "</span>" +
+    return '<li class="card row">' + badgeIcon(h.icon, h.group === "emergency" ? "red" : "") +
       '<div class="grow"><h3>' + esc(L(h.name)) + "</h3></div>" + action + "</li>";
   }
 
@@ -261,13 +272,13 @@
   }
 
   function officeItem(o) {
-    var call = o.phone ? '<a class="btn" href="tel:' + esc(o.phone) + '">📞 ' + esc(o.phone) + "</a>" : "";
-    return '<li class="card office" id="office-' + o.id + '"><div class="row"><span class="icon" aria-hidden="true">' + o.icon + "</span>" +
+    var call = o.phone ? '<a class="btn" href="tel:' + esc(o.phone) + '">' + ic("phone", 16) + esc(o.phone) + "</a>" : "";
+    return '<li class="card office" id="office-' + o.id + '"><div class="row">' + badgeIcon(o.icon) +
       '<div class="grow"><h3>' + esc(L(o.name)) + "</h3>" + (o.note ? '<div class="muted">' + esc(L(o.note)) + "</div>" : "") + "</div></div>" +
       '<div class="office-status">' + statusBadge(o) + "</div>" +
-      '<dl class="facts"><dt>🕗 ' + t("hours") + "</dt><dd>" + hoursSummary(o) + "</dd>" +
-      "<dt>📍 " + t("where") + "</dt><dd>" + officeWhere(o) + "</dd></dl>" +
-      '<div class="actions"><a class="btn ghost" target="_blank" rel="noopener" href="' + mapsUrl(o.map) + '">🧭 ' + t("directions") + "</a>" + call + "</div></li>";
+      '<dl class="facts"><dt>' + ic("clock", 16) + t("hours") + "</dt><dd>" + hoursSummary(o) + "</dd>" +
+      "<dt>" + ic("map-pin", 16) + t("where") + "</dt><dd>" + officeWhere(o) + "</dd></dl>" +
+      '<div class="actions"><a class="btn ghost" target="_blank" rel="noopener" href="' + mapsUrl(o.map) + '">' + ic("navigation", 16) + t("directions") + "</a>" + call + "</div></li>";
   }
 
   function renderOffices(focus) {
@@ -284,61 +295,63 @@
     var o = s.officeId && officeById(s.officeId);
     var reqs = L(s.requirements).map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("");
     return '<li><details class="card" id="svc-' + s.id + '"><summary class="row">' +
-      '<span class="icon" aria-hidden="true">' + s.icon + "</span>" +
+      badgeIcon(s.icon) +
       '<div class="grow"><h3>' + esc(L(s.name)) + '</h3><div class="muted">' + esc(L(s.office)) + "</div></div>" +
-      '<span class="chev" aria-hidden="true">›</span></summary>' +
+      '<span class="chev">' + ic("chevron-down", 20) + "</span></summary>" +
       '<div class="section-label">' + t("requirements") + "</div><ul>" + reqs + "</ul>" +
       '<div class="section-label">' + t("office") + '</div><div>' + esc(L(s.office)) + "</div>" +
       (o ? '<div class="svc-office">' + statusBadge(o) + '<div class="muted">' + hoursSummary(o) + "</div>" +
-        '<a class="btn ghost" href="#/offices/' + o.id + '">🏢 ' + t("viewOffice") + "</a></div>" : "") +
+        '<a class="btn ghost" href="#/offices/' + o.id + '">' + ic("building-2", 16) + t("viewOffice") + "</a></div>" : "") +
       "</details></li>";
   }
 
   function placeItem(p) {
-    return '<li class="card"><div class="row"><span class="icon" aria-hidden="true">' + p.icon + "</span>" +
+    return '<li class="card"><div class="row">' + badgeIcon(p.icon, "sky") +
       '<div class="grow"><h3>' + esc(p.name) + '</h3><div class="muted">Brgy. ' + esc(p.barangay) + "</div></div></div>" +
-      '<p style="margin:10px 0 12px">' + esc(L(p.desc)) + "</p>" +
-      '<a class="btn ghost" target="_blank" rel="noopener" href="' + mapsUrl(p.map) + '">📍 ' + t("directions") + "</a></li>";
+      '<p class="desc">' + esc(L(p.desc)) + "</p>" +
+      '<a class="btn ghost" target="_blank" rel="noopener" href="' + mapsUrl(p.map) + '">' + ic("navigation", 16) + t("directions") + "</a></li>";
   }
 
   function barangayChip(b) {
     return '<a class="chip" target="_blank" rel="noopener" href="' +
-      mapsUrl("Barangay " + b.replace(/\s*\(.*\)/, "") + " Hall, Rodriguez, Rizal") + '">' + esc(b) + "</a>";
+      mapsUrl("Barangay " + b.replace(/\s*\(.*\)/, "") + " Hall, Rodriguez, Rizal") + '">' + ic("map-pin", 16) + esc(b) + "</a>";
   }
 
   function govCard() {
     var g = DATA.town;
     return '<section class="card gov"><img src="icons/icon-192.png" alt="" width="56" height="56">' +
       "<h3>" + t("govTitle") + '</h3><div class="addr">' + esc(g.address) + "</div><ul>" +
-      '<li>🌐 <a href="' + esc(g.website) + '" target="_blank" rel="noopener">' + t("govSite") + ": " + esc(g.website.replace(/^https?:\/\//, "")) + "</a></li>" +
-      '<li>✉️ <a href="mailto:' + esc(g.email) + '">' + t("govEmail") + ": " + esc(g.email) + "</a></li>" +
+      '<li><a href="' + esc(g.website) + '" target="_blank" rel="noopener">' + ic("globe", 18) + "<span><small>" + t("govSite") + "</small>" + esc(g.website.replace(/^https?:\/\//, "")) + "</span></a></li>" +
+      '<li><a href="mailto:' + esc(g.email) + '">' + ic("mail", 18) + "<span><small>" + t("govEmail") + "</small>" + esc(g.email) + "</span></a></li>" +
       "</ul></section>";
   }
 
   function renderHome() {
     var tiles = [
-      ["#/hotlines", "📞", t("nav.hotlines")],
-      ["#/services", "📋", t("nav.services")],
-      ["#/offices", "🏢", t("nav.offices")],
-      ["#/barangays", "🏘️", t("nav.barangays")],
-      ["#/places", "🗺️", t("nav.places")],
-      ["#/report", "📝", t("nav.report")]
+      ["#/hotlines", "phone-call", t("nav.hotlines"), "red"],
+      ["#/services", "clipboard-list", t("nav.services"), "green"],
+      ["#/offices", "building-2", t("nav.offices"), "sky"],
+      ["#/barangays", "house-plus", t("nav.barangays"), "amber"],
+      ["#/places", "mountain", t("nav.places"), "teal"],
+      ["#/report", "message-square-warning", t("nav.report"), "violet"]
     ].map(function (x) {
-      return '<a class="tile" href="' + x[0] + '"><span class="emoji" aria-hidden="true">' + x[1] + "</span>" + x[2] + "</a>";
+      return '<a class="tile" href="' + x[0] + '"><span class="tile-icon tone-' + x[3] + '">' + ic(x[1], 26) + "</span>" + x[2] + "</a>";
     }).join("");
 
     var news = DATA.announcements.map(function (a) {
-      return '<li class="card"><div class="muted">' + esc(a.date) + "</div><h3>" + esc(L(a.title)) +
-        '</h3><p style="margin:6px 0 0">' + esc(L(a.body)) + "</p></li>";
+      return '<li class="card news"><div class="news-head">' + badgeIcon("megaphone", "amber") +
+        '<div><h3>' + esc(L(a.title)) + '</h3><div class="muted">' + esc(a.date) + "</div></div></div>" +
+        '<p class="desc">' + esc(L(a.body)) + "</p></li>";
     }).join("");
 
     view.innerHTML =
       '<section class="hero"><h2><span class="script">' + t("welcomeA") + '</span><span class="big">' + t("welcomeB") + "</span></h2>" +
-      '<form id="search-form" role="search"><input id="q" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></form></section>' +
-      '<a class="hotline911" href="tel:911" aria-label="' + t("sos") + '"><span class="hl-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>' +
+      '<form id="search-form" class="search-wrap" role="search">' + ic("search", 20) + '<input id="q" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></form></section>' +
+      '<a class="hotline911" href="tel:911" aria-label="' + t("sos") + '"><span class="hl-icon">' + ic("phone-call", 22) + "</span>" +
       '<span class="hl-label" aria-hidden="true"><span class="hl-top">MONTALBAN</span><span class="hl-pill">HOTLINE</span></span>' +
-      '<span class="hl-num" aria-hidden="true">911</span><span class="hl-call" aria-hidden="true">' + t("sosCall") + " ›</span></a>" +
-      '<a class="report-cta" href="#/report">📝 ' + t("reportCta") + ' <span aria-hidden="true">›</span></a>' +
+      '<span class="hl-num" aria-hidden="true">911</span><span class="hl-call" aria-hidden="true">' + t("sosCall") + ic("chevron-right", 16) + "</span></a>" +
+      '<a class="report-cta" href="#/report">' + badgeIcon("message-square-warning", "amber") +
+      '<span class="grow"><strong>' + t("reportCta") + '</strong><span class="muted">' + t("reportCtaSub") + "</span></span>" + ic("chevron-right", 20) + "</a>" +
       '<div class="section-label">' + t("quick") + '</div><div class="grid">' + tiles + "</div>" +
       '<div class="section-label">' + t("news") + '</div><ul class="list">' + news + "</ul>" + govCard();
 
@@ -359,7 +372,7 @@
 
   function renderServices() {
     view.innerHTML = "<h2>" + t("nav.services") + "</h2>" +
-      '<input id="filter" class="search bordered" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '">' +
+      '<div class="search-wrap bordered">' + ic("search", 20) + '<input id="filter" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></div>' +
       '<p class="note">' + t("reqNote") + '</p><ul class="list" id="svc-list">' + DATA.services.map(serviceItem).join("") + "</ul>";
 
     var list = document.getElementById("svc-list");
@@ -421,7 +434,7 @@
 
   function reportItem(r) {
     var c = categoryById(r.category);
-    return '<li class="card row"><span class="icon" aria-hidden="true">' + (c ? c.icon : "📝") + "</span>" +
+    return '<li class="card row">' + badgeIcon(c ? c.icon : "message-square-warning") +
       '<div class="grow"><h3>' + esc(c ? L(c.name) : r.category) + '</h3><div class="muted">' +
       esc(r.ref) + " · Brgy. " + esc(r.barangay) + " · " + esc(new Date(r.created).toLocaleDateString("en-PH")) + "</div></div>" +
       '<a class="btn ghost" href="#/report/' + esc(r.ref) + '">' + t("open") + "</a></li>";
@@ -436,7 +449,7 @@
 
     var cats = DATA.report.categories.map(function (c) {
       return '<label class="cat"><input type="radio" name="category" value="' + c.id + '" required>' +
-        '<span><span aria-hidden="true">' + c.icon + "</span> " + esc(L(c.name)) + "</span></label>";
+        '<span>' + ic(c.icon, 22) + esc(L(c.name)) + "</span></label>";
     }).join("");
     var brgys = DATA.barangays.map(function (b) {
       return '<option value="' + esc(b) + '">' + esc(b) + "</option>";
@@ -448,7 +461,7 @@
       '<fieldset><legend>' + t("category") + ' <em>*</em></legend><div class="cats">' + cats + "</div></fieldset>" +
       field(t("barangay"), '<select name="barangay" required><option value="">' + t("choose") + "</option>" + brgys + "</select>", true) +
       field(t("location"), '<input name="location" required placeholder="' + t("locationPh") + '">', true) +
-      '<div class="gps-row"><button type="button" id="gps" class="btn ghost">' + t("useGps") + '</button><span id="gps-status" class="muted"></span></div>' +
+      '<div class="gps-row"><button type="button" id="gps" class="btn ghost">' + ic("crosshair", 16) + t("useGps") + '</button><span id="gps-status" class="muted"></span></div>' +
       field(t("details"), '<textarea name="details" rows="4" required placeholder="' + t("detailsPh") + '"></textarea>', true) +
       field(t("photo"), '<input name="photo" type="file" accept="image/*" capture="environment">') +
       field(t("name"), '<input name="name" autocomplete="name">') +
@@ -511,19 +524,19 @@
     var photo = pendingPhotoRef === ref ? pendingPhoto : null;
 
     var buttons = "";
-    if (navigator.share) buttons += '<button type="button" id="share" class="btn">' + t("share") + "</button>";
-    if (ch.sms) buttons += '<a class="btn" href="sms:' + esc(ch.sms) + "?body=" + encodeURIComponent(text) + '">' + t("sms") + "</a>";
+    if (navigator.share) buttons += '<button type="button" id="share" class="btn">' + ic("share-2", 16) + t("share") + "</button>";
+    if (ch.sms) buttons += '<a class="btn" href="sms:' + esc(ch.sms) + "?body=" + encodeURIComponent(text) + '">' + ic("message-circle", 16) + t("sms") + "</a>";
     if (ch.email) buttons += '<a class="btn" href="mailto:' + esc(ch.email) + "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(text) + '">' + t("email") + "</a>";
-    buttons += '<button type="button" id="copy" class="btn ghost">' + t("copy") + "</button>";
+      "&body=" + encodeURIComponent(text) + '">' + ic("mail", 16) + t("email") + "</a>";
+    buttons += '<button type="button" id="copy" class="btn ghost">' + ic("copy", 16) + t("copy") + "</button>";
 
     view.innerHTML = "<h2>" + t("sendVia") + "</h2>" +
       '<div class="card"><div class="muted">' + t("refNo") + "</div><h3 class=\"ref\">" + esc(r.ref) + "</h3></div>" +
       '<p class="note">' + (ch.sms || ch.email ? t("sendNote") : t("noChannel")) + "</p>" +
       '<div class="actions">' + buttons + "</div>" +
       '<pre class="card preview">' + esc(text) + "</pre>" +
-      '<div class="actions"><a class="btn ghost" href="#/report">' + t("newReport") + "</a>" +
-      '<button type="button" id="del" class="btn ghost danger">' + t("deleteReport") + "</button></div>";
+      '<div class="actions"><a class="btn ghost" href="#/report">' + ic("plus", 16) + t("newReport") + "</a>" +
+      '<button type="button" id="del" class="btn ghost danger">' + ic("trash-2", 16) + t("deleteReport") + "</button></div>";
 
     var shareBtn = document.getElementById("share");
     if (shareBtn) shareBtn.addEventListener("click", function () {
@@ -625,6 +638,16 @@
     try { localStorage.setItem("lang", lang); } catch (e) { /* storage blocked */ }
     applyLang();
   });
+
+  document.querySelectorAll("[data-icon]").forEach(function (el) {
+    el.innerHTML = ic(el.getAttribute("data-icon"), 22);
+  });
+
+  // Soft shadow under the header once the page scrolls.
+  var topbar = document.querySelector(".topbar");
+  window.addEventListener("scroll", function () {
+    topbar.classList.toggle("scrolled", window.scrollY > 4);
+  }, { passive: true });
 
   window.addEventListener("hashchange", route);
   applyLang();
