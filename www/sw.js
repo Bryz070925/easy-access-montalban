@@ -1,7 +1,10 @@
 // Offline support: cache the app shell so hotlines and requirements
 // are still available without signal. Bump VERSION when files change.
-var VERSION = "easy-access-v6";
-var FILES = ["./", "index.html", "styles.css", "app.js", "data.js", "manifest.json", "img/montalban-logo.jpg", "icons/icon-192.png", "icons/icon-512.png"];
+var VERSION = "easy-access-v7";
+var FILES = ["./", "index.html", "styles.css", "app.js", "data.js", "manifest.json", "img/montalban-logo.jpg", "icons/icon-192.png", "icons/icon-512.png", "img/hero-landscape.svg",
+  "fonts/montserrat-latin-500-normal.woff2", "fonts/montserrat-latin-700-normal.woff2",
+  "fonts/montserrat-latin-800-normal.woff2", "fonts/montserrat-latin-900-normal.woff2",
+  "fonts/kaushan-script-latin-400-normal.woff2"];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(FILES); }));

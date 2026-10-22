@@ -7,6 +7,10 @@ window.APP_DATA = {
   town: {
     name: "Bayan ng Montalban",
     official: "Municipality of Rodriguez (Montalban), Rizal",
+    // From the official "Bayan ng Montalban" Facebook page.
+    address: "J.P. Rizal St., Brgy. Balite, Rodriguez (Montalban), Rizal 1860",
+    website: "https://montalban.gov.ph",
+    email: "montalbanpublicinformation@gmail.com",
     tagline: {
       fil: "Serbisyo at impormasyon ng bayan, abot-kamay.",
       en: "Town services and information, at your fingertips."
@@ -14,7 +18,7 @@ window.APP_DATA = {
   },
 
   hotlines: [
-    { id: "911", group: "emergency", name: { fil: "Pambansang Emergency Hotline", en: "National Emergency Hotline" }, phone: "911", icon: "🚨" },
+    { id: "911", group: "emergency", name: { fil: "Montalban Hotline 911 (Emergency)", en: "Montalban Hotline 911 (Emergency)" }, phone: "911", icon: "🚨" },
     { id: "8888", group: "emergency", name: { fil: "Citizens' Complaint Hotline", en: "Citizens' Complaint Hotline" }, phone: "8888", icon: "📣" },
     { id: "redcross", group: "emergency", name: { fil: "Philippine Red Cross", en: "Philippine Red Cross" }, phone: "143", icon: "➕" },
     { id: "mdrrmo", group: "local", name: { fil: "MDRRMO (Rescue / Kalamidad)", en: "MDRRMO (Rescue / Disaster)" }, phone: null, icon: "🛟" },
@@ -30,16 +34,16 @@ window.APP_DATA = {
   // office its own array to override it. `room: null`
   // shows "To be added". `map` is a Google Maps search query.
   offices: [
-    { id: "mayor", icon: "🏛️", name: { fil: "Tanggapan ng Mayor", en: "Office of the Mayor" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null },
-    { id: "treasurer", icon: "💰", name: { fil: "Municipal Treasurer's Office", en: "Municipal Treasurer's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null,
+    { id: "mayor", icon: "🏛️", name: { fil: "Tanggapan ng Mayor", en: "Office of the Mayor" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
+    { id: "treasurer", icon: "💰", name: { fil: "Municipal Treasurer's Office", en: "Municipal Treasurer's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Cedula, bayad sa amilyar at iba pang buwis", en: "Cedula, real property tax and other payments" } },
-    { id: "assessor", icon: "📐", name: { fil: "Municipal Assessor's Office", en: "Municipal Assessor's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null,
+    { id: "assessor", icon: "📐", name: { fil: "Municipal Assessor's Office", en: "Municipal Assessor's Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Tax declaration ng lupa at bahay", en: "Tax declarations for land and buildings" } },
-    { id: "civil-registrar", icon: "📜", name: { fil: "Municipal Civil Registrar", en: "Municipal Civil Registrar" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null,
+    { id: "civil-registrar", icon: "📜", name: { fil: "Municipal Civil Registrar", en: "Municipal Civil Registrar" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Birth, kasal at death certificate", en: "Birth, marriage and death certificates" } },
-    { id: "bplo", icon: "🏪", name: { fil: "Business Permits and Licensing Office (BPLO)", en: "Business Permits and Licensing Office (BPLO)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null },
-    { id: "engineering", icon: "🏗️", name: { fil: "Municipal Engineering Office", en: "Municipal Engineering Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null },
-    { id: "mswdo", icon: "🤝", name: { fil: "MSWDO (Social Welfare)", en: "MSWDO (Social Welfare)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, Rizal", hours: "standard", phone: null,
+    { id: "bplo", icon: "🏪", name: { fil: "Business Permits and Licensing Office (BPLO)", en: "Business Permits and Licensing Office (BPLO)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
+    { id: "engineering", icon: "🏗️", name: { fil: "Municipal Engineering Office", en: "Municipal Engineering Office" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null },
+    { id: "mswdo", icon: "🤝", name: { fil: "MSWDO (Social Welfare)", en: "MSWDO (Social Welfare)" }, building: "townhall", room: null, map: "Rodriguez Municipal Hall, J.P. Rizal, Balite, Rodriguez, Rizal", hours: "standard", phone: null,
       note: { fil: "Solo parent, ayuda at iba pang tulong", en: "Solo parent, assistance and other aid" } },
     { id: "osca", icon: "👵", name: { fil: "OSCA (Office of Senior Citizens Affairs)", en: "OSCA (Office of Senior Citizens Affairs)" }, building: null, room: null, map: "OSCA Rodriguez Rizal", hours: "standard", phone: null },
     { id: "pdao", icon: "♿", name: { fil: "PDAO (Persons with Disability Affairs Office)", en: "PDAO (Persons with Disability Affairs Office)" }, building: null, room: null, map: "PDAO Rodriguez Rizal", hours: "standard", phone: null },
@@ -49,7 +53,10 @@ window.APP_DATA = {
   ],
 
   buildings: {
-    townhall: { fil: "Munisipyo ng Rodriguez", en: "Rodriguez Municipal Hall" }
+    townhall: {
+      name: { fil: "Munisipyo ng Montalban", en: "Montalban Municipal Hall" },
+      address: "J.P. Rizal St., Brgy. Balite, Rodriguez, Rizal 1860"
+    }
   },
 
   // Municipal office hours (confirmed): Mon–Fri, 8:00 AM–5:00 PM.

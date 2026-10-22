@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f97d4"/>
+      <stop offset="0.55" stop-color="#8cbedf"/>
+      <stop offset="1" stop-color="#cfe6f3"/>
+    </linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fb59a"/>
+      <stop offset="1" stop-color="#a9cdb8"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f8f2a"/>
+      <stop offset="1" stop-color="#188808"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#086800"/>
+      <stop offset="1" stop-color="#004810"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="340" fill="url(#sky)"/>
+
+  <!-- clouds -->
+  <g fill="#fff" opacity=".85">
+    <ellipse cx="120" cy="52" rx="70" ry="16"/>
+    <ellipse cx="160" cy="42" rx="40" ry="16"/>
+    <ellipse cx="590" cy="36" rx="85" ry="15"/>
+    <ellipse cx="640" cy="26" rx="45" ry="15"/>
+    <ellipse cx="380" cy="78" rx="55" ry="10" opacity=".7"/>
+  </g>
+
+  <g transform="translate(0 48)">
+  <!-- far ridge -->
+  <path fill="url(#far)" d="M0 190 L70 160 L130 175 L200 140 L270 168 L330 150 L400 172 L470 138 L540 165 L610 145 L690 170 L760 150 L800 160 L800 340 L0 340 Z"/>
+
+  <!-- twin peaks with the gorge between (Pamitinan / Binacayan, Wawa) -->
+  <path fill="url(#mid)" d="M0 230 L60 205 L120 215 L190 170 L250 120 L285 95 L310 120 L345 190 L362 236
+                            L438 236 L455 190 L490 118 L515 92 L548 122 L610 172 L680 200 L740 190 L800 205 L800 340 L0 340 Z"/>
+  <path fill="#fff" opacity=".9" d="M392 236 L408 236 L406 262 L394 262 Z"/>
+
+  </g>
+
+  <!-- near hills -->
+  <path fill="url(#near)" d="M0 290 Q100 266 200 284 T400 280 T600 284 T800 274 L800 340 L0 340 Z"/>
+</svg>

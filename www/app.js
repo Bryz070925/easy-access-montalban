@@ -12,9 +12,14 @@
       "nav.services": "Serbisyo",
       "nav.barangays": "Barangay",
       "nav.places": "Pasyalan",
-      welcome: "Mabuhay, Montalbeño!",
+      welcomeA: "Mabuhay,",
+      welcomeB: "Montalbeño!",
       search: "Maghanap ng serbisyo, hotline, barangay…",
-      sos: "EMERGENCY — Tumawag sa 911",
+      sos: "Emergency: tumawag sa Montalban Hotline 911",
+      sosCall: "Tumawag",
+      govTitle: "Pamahalaang Bayan ng Montalban",
+      govSite: "Opisyal na website",
+      govEmail: "Public Information Office",
       quick: "Mabilisang Access",
       news: "Mga Anunsyo",
       call: "Tawagan",
@@ -83,9 +88,14 @@
       "nav.services": "Services",
       "nav.barangays": "Barangays",
       "nav.places": "Places",
-      welcome: "Welcome, Montalbeño!",
+      welcomeA: "Welcome,",
+      welcomeB: "Montalbeño!",
       search: "Search services, hotlines, barangays…",
-      sos: "EMERGENCY — Call 911",
+      sos: "Emergency: call Montalban Hotline 911",
+      sosCall: "Call",
+      govTitle: "Municipal Government of Montalban",
+      govSite: "Official website",
+      govEmail: "Public Information Office",
       quick: "Quick Access",
       news: "Announcements",
       call: "Call",
@@ -245,7 +255,9 @@
 
   function officeWhere(o) {
     if (!o.building) return t("locationPending");
-    return esc(L(DATA.buildings[o.building])) + (o.room ? " · " + esc(o.room) : '<br><span class="muted">' + t("roomPending") + "</span>");
+    var b = DATA.buildings[o.building];
+    return esc(L(b.name)) + '<br><span class="muted">' + esc(b.address) + "</span>" +
+      (o.room ? "<br>" + esc(o.room) : '<br><span class="muted">' + t("roomPending") + "</span>");
   }
 
   function officeItem(o) {
@@ -294,6 +306,15 @@
       mapsUrl("Barangay " + b.replace(/\s*\(.*\)/, "") + " Hall, Rodriguez, Rizal") + '">' + esc(b) + "</a>";
   }
 
+  function govCard() {
+    var g = DATA.town;
+    return '<section class="card gov"><img src="icons/icon-192.png" alt="" width="56" height="56">' +
+      "<h3>" + t("govTitle") + '</h3><div class="addr">' + esc(g.address) + "</div><ul>" +
+      '<li>🌐 <a href="' + esc(g.website) + '" target="_blank" rel="noopener">' + t("govSite") + ": " + esc(g.website.replace(/^https?:\/\//, "")) + "</a></li>" +
+      '<li>✉️ <a href="mailto:' + esc(g.email) + '">' + t("govEmail") + ": " + esc(g.email) + "</a></li>" +
+      "</ul></section>";
+  }
+
   function renderHome() {
     var tiles = [
       ["#/hotlines", "📞", t("nav.hotlines")],
@@ -312,12 +333,14 @@
     }).join("");
 
     view.innerHTML =
-      '<section class="hero"><h2>' + t("welcome") + "</h2><p>" + esc(L(DATA.town.tagline)) + "</p>" +
+      '<section class="hero"><h2><span class="script">' + t("welcomeA") + '</span><span class="big">' + t("welcomeB") + "</span></h2><p>" + esc(L(DATA.town.tagline)) + "</p>" +
       '<form id="search-form" role="search"><input id="q" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></form></section>' +
-      '<a class="sos" href="tel:911">🚨 ' + t("sos") + "</a>" +
+      '<a class="hotline911" href="tel:911" aria-label="' + t("sos") + '"><span class="hl-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>' +
+      '<span class="hl-label" aria-hidden="true"><span class="hl-top">MONTALBAN</span><span class="hl-pill">HOTLINE</span></span>' +
+      '<span class="hl-num" aria-hidden="true">911</span><span class="hl-call" aria-hidden="true">' + t("sosCall") + " ›</span></a>" +
       '<a class="report-cta" href="#/report">📝 ' + t("reportCta") + ' <span aria-hidden="true">›</span></a>' +
       '<div class="section-label">' + t("quick") + '</div><div class="grid">' + tiles + "</div>" +
-      '<div class="section-label">' + t("news") + '</div><ul class="list">' + news + "</ul>";
+      '<div class="section-label">' + t("news") + '</div><ul class="list">' + news + "</ul>" + govCard();
 
     document.getElementById("search-form").addEventListener("submit", function (e) {
       e.preventDefault();

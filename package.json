@@ -2,7 +2,7 @@
   "name": "easy-access-montalban",
   "version": "1.0.0",
   "private": true,
-  "description": "Bayan ng Montalban \u2014 web app (PWA) and Android APK",
+  "description": "Bayan ng Montalban — web app (PWA) and Android APK",
   "scripts": {
     "start": "npx http-server www -p 8000 -c-1",
     "sync": "cap sync android",
@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",
-    "@capacitor/cli": "8.5.3"
+    "@capacitor/cli": "8.5.3",
+    "@fontsource/kaushan-script": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0"
   }
 }
