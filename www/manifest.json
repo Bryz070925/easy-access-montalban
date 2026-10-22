@@ -1,0 +1,14 @@
+{
+  "name": "Easy Access Bayan ng Montalban",
+  "short_name": "Montalban",
+  "description": "Hotlines, serbisyo, barangay at pasyalan ng Montalban (Rodriguez), Rizal.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f5",
+  "theme_color": "#0b6e4f",
+  "lang": "fil",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
