@@ -22,8 +22,14 @@ npm install
 npm start          # http://localhost:8000
 ```
 
-`www/` can also be hosted as-is on Netlify, Vercel, Firebase Hosting, or any
-static web server.
+### Online version
+
+Every push to `main` that changes `www/` publishes the web app with GitHub Pages
+at **https://bryz070925.github.io/easy-access-montalban/**. People can open it in
+any browser and use "Add to Home Screen" to install it.
+
+One-time setup: the repository must be public (or on a paid GitHub plan), and
+**Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**.
 
 ## Get the APK
 
@@ -43,6 +49,20 @@ npm run apk:debug   # → android/app/build/outputs/apk/debug/app-debug.apk
 
 After changing anything in `www/`, run `npm run sync` before building the APK
 so the Android app gets the new files.
+
+## App icon
+
+Put the logo at `assets/logo.png` (square PNG, at least 1024×1024, transparent
+background), then run:
+
+```sh
+npm install
+npm run icons     # generates every Android icon and splash size
+```
+
+Commit the changed files under `android/`. For the web app, also replace
+`www/icons/icon.svg` (or add a PNG and point `www/manifest.json` and
+`www/index.html` at it).
 
 ## Before publishing to Google Play
 
