@@ -1,4 +1,4 @@
-// Content for Easy Access Bayan ng Montalban.
+// Content for the Bayan ng Montalban app.
 // Edit this file to update the app. Any `phone: null` means the official
 // number has not been verified yet — the app shows "Idadagdag pa / To be added"
 // instead of guessing. Please confirm details with the Municipal Hall.
@@ -230,8 +230,8 @@ window.APP_DATA = {
       date: "2026-10-22",
       title: { fil: "Maligayang pagdating!", en: "Welcome!" },
       body: {
-        fil: "Ito ang unang bersyon ng Easy Access app. Ang mga numero at requirements ay patuloy na kinukumpirma sa Munisipyo.",
-        en: "This is the first version of the Easy Access app. Phone numbers and requirements are still being confirmed with the Municipal Hall."
+        fil: "Ito ang unang bersyon ng Bayan ng Montalban app. Ang mga numero at requirements ay patuloy na kinukumpirma sa Munisipyo.",
+        en: "This is the first version of the Bayan ng Montalban app. Phone numbers and requirements are still being confirmed with the Municipal Hall."
       }
     }
   ]

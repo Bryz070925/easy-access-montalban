@@ -1,6 +1,6 @@
 // Offline support: cache the app shell so hotlines and requirements
 // are still available without signal. Bump VERSION when files change.
-var VERSION = "easy-access-v4";
+var VERSION = "easy-access-v5";
 var FILES = ["./", "index.html", "styles.css", "app.js", "data.js", "manifest.json", "img/montalban-logo.jpg", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", function (e) {

@@ -1,4 +1,4 @@
-# Easy Access Bayan ng Montalban
+# Bayan ng Montalban
 
 Web app (PWA) and Android APK that give residents of Montalban (Rodriguez), Rizal
 one place for hotlines, Municipal services and requirements, office hours and

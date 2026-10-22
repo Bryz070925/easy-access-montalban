@@ -2,7 +2,7 @@
   "name": "easy-access-montalban",
   "version": "1.0.0",
   "private": true,
-  "description": "Easy Access Bayan ng Montalban \u2014 web app (PWA) and Android APK",
+  "description": "Bayan ng Montalban \u2014 web app (PWA) and Android APK",
   "scripts": {
     "start": "npx http-server www -p 8000 -c-1",
     "sync": "cap sync android",

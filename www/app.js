@@ -392,7 +392,7 @@
     if (r.gps) lines.push("Mapa / Map: https://www.google.com/maps?q=" + r.gps);
     lines.push("", "Detalye / Details:", r.details);
     if (r.name || r.contact) lines.push("", "Nag-report / Reported by: " + [r.name, r.contact].filter(Boolean).join(" — "));
-    lines.push("", "(Ipinadala gamit ang Easy Access Bayan ng Montalban)");
+    lines.push("", "(Ipinadala gamit ang Bayan ng Montalban app)");
     return lines.join("\n");
   }
 
