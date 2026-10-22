@@ -14,7 +14,10 @@
 <body>
   <header class="topbar">
     <h1 class="brand"><a href="#/"><img src="img/montalban-logo.jpg" alt="Bayan ng Montalban" width="1200" height="283"></a></h1>
-    <button id="lang-toggle" class="lang" type="button" aria-label="Palitan ang wika / Change language">EN</button>
+    <div class="header-actions">
+      <a id="desk-btn" class="desk-btn" href="#/desk" hidden><span data-icon="user-cog"></span><span data-i18n="desk"></span></a>
+      <button id="lang-toggle" class="lang" type="button" aria-label="Palitan ang wika / Change language">EN</button>
+    </div>
   </header>
 
   <main id="view" tabindex="-1"></main>
@@ -24,10 +27,11 @@
     <a href="#/hotlines" data-tab="hotlines"><span class="ti" data-icon="phone"></span><span data-i18n="nav.hotlines"></span></a>
     <a href="#/services" data-tab="services"><span class="ti" data-icon="clipboard-list"></span><span data-i18n="nav.services"></span></a>
     <a href="#/offices" data-tab="offices"><span class="ti" data-icon="building-2"></span><span data-i18n="nav.offices"></span></a>
-    <a href="#/places" data-tab="places"><span class="ti" data-icon="map"></span><span data-i18n="nav.places"></span></a>
+    <a href="#/inquire" data-tab="inquire"><span class="ti" data-icon="message-circle-question"></span><span data-i18n="nav.inquire"></span></a>
     <a href="#/report" data-tab="report"><span class="ti" data-icon="message-square-warning"></span><span data-i18n="nav.report"></span></a>
   </nav>
 
+  <script src="config.js"></script>
   <script src="icons.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>

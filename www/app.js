@@ -81,7 +81,84 @@
       myReports: "Aking mga Report",
       refNo: "Ref. No.",
       deleteReport: "Burahin",
-      fillRequired: "Pakikumpleto ang mga kailangang field."
+      fillRequired: "Pakikumpleto ang mga kailangang field.",
+      "nav.inquire": "Magtanong",
+      where2: "Saan",
+      askAbout: "Magtanong tungkol dito",
+      servicesIntro: "Mga serbisyo ng bawat opisina at ang mga kailangang dalhin.",
+      servicesCount: "serbisyo",
+      officeHoursLink: "Oras at lokasyon",
+      seeServices: "Mga serbisyo",
+      inquireCta: "Magtanong sa opisina",
+      inquireCtaSub: "Makakuha ng reference no. at sagot",
+      reportCtaShort: "May problema?",
+      reportCtaShortSub: "I-report sa bayan",
+      inquireTitle: "Magtanong sa Opisina",
+      inquireIntro: "Ipadala ang tanong mo sa tamang opisina. Makakatanggap ka ng reference number at makikita mo rito ang sagot.",
+      inquireOfflineIntro: "Ipadala ang tanong mo sa tamang opisina. (Hindi pa naka-set up ang online na sistema, kaya ibabahagi o kokopyahin mo muna ang tanong.)",
+      tabAsk: "Magtanong",
+      tabMine: "Aking mga tanong",
+      office2: "Opisina",
+      topic: "Tungkol saan",
+      topicPh: "Hal. Business permit renewal",
+      question: "Ang iyong tanong",
+      questionPh: "Isulat nang malinaw ang tanong mo…",
+      inquirePrivacy: "Ang pangalan at contact ay makikita lang ng staff ng opisina.",
+      sendInquiry: "Ipadala ang tanong",
+      sending: "Ipinapadala…",
+      sentTitle: "Naipadala na!",
+      sentBody: "I-save ang reference number mo. Makikita mo ang sagot sa \u201cAking mga tanong\u201d.",
+      viewMine: "Tingnan ang aking mga tanong",
+      askAnother: "Magtanong ulit",
+      netError: "Hindi maipadala. Tingnan ang internet connection at subukan ulit.",
+      noInquiries: "Wala ka pang tanong.",
+      refresh: "I-refresh",
+      lastUpdated: "Huling update",
+      offlineCached: "Offline: ipinapakita ang huling na-save.",
+      reply: "Sagot",
+      repliedBy: "Sumagot",
+      "status.new": "Bago",
+      "status.in_progress": "Inaasikaso",
+      "status.answered": "Nasagot",
+      "status.closed": "Sarado",
+      "status.local": "Hindi naipadala online",
+      allStatus: "Lahat",
+      staffLogin: "Para sa staff: mag-login",
+      deskTitle: "Staff Desk",
+      deskLoginIntro: "Para lang sa mga awtorisadong staff ng Munisipyo.",
+      email2: "Email",
+      password: "Password",
+      login: "Mag-login",
+      logout: "Mag-logout",
+      loginFailed: "Mali ang email o password.",
+      notStaff: "Hindi naka-rehistro bilang staff ang account na ito.",
+      deskNotSetup: "Hindi pa naka-set up ang online na sistema. Tingnan ang SUPABASE-SETUP.md sa repository.",
+      allOffices: "Lahat ng opisina",
+      tabInquiries: "Mga tanong",
+      tabPost: "Mag-post ng anunsyo",
+      from: "Mula kay",
+      save: "I-save",
+      saved: "Na-save!",
+      status: "Status",
+      replyPh: "Isulat ang sagot para sa residente…",
+      annTitle: "Pamagat",
+      annTitlePh: "Hal. Libreng anti-rabies vaccination sa Sabado",
+      annCategory: "Uri",
+      annOffice: "Mula sa opisina",
+      annBody: "Detalye",
+      annBodyPh: "Kailan, saan, sino ang puwede, ano ang dadalhin…",
+      post: "I-post",
+      posted: "Na-post!",
+      deleteConfirm: "Burahin ang anunsyong ito?",
+      postedAnn: "Mga naka-post",
+      "cat.advisory": "Abiso",
+      "cat.schedule": "Iskedyul",
+      "cat.program": "Programa",
+      "cat.emergency": "Emergency",
+      none: "— Wala —",
+      noneYet: "Wala pa.",
+      inquiryCount: "tanong",
+      desk: "Desk"
     },
     en: {
       "nav.home": "Home",
@@ -158,7 +235,84 @@
       myReports: "My Reports",
       refNo: "Ref. No.",
       deleteReport: "Delete",
-      fillRequired: "Please complete the required fields."
+      fillRequired: "Please complete the required fields.",
+      "nav.inquire": "Ask",
+      where2: "Where",
+      askAbout: "Ask about this",
+      servicesIntro: "Services of each office and what to bring.",
+      servicesCount: "services",
+      officeHoursLink: "Hours & location",
+      seeServices: "Services",
+      inquireCta: "Ask an office",
+      inquireCtaSub: "Get a reference no. and an answer",
+      reportCtaShort: "Problem?",
+      reportCtaShortSub: "Report it to the town",
+      inquireTitle: "Ask an Office",
+      inquireIntro: "Send your question to the right office. You'll get a reference number and can see the answer here.",
+      inquireOfflineIntro: "Send your question to the right office. (The online system isn't set up yet, so you'll share or copy your question for now.)",
+      tabAsk: "Ask",
+      tabMine: "My inquiries",
+      office2: "Office",
+      topic: "Topic",
+      topicPh: "E.g. Business permit renewal",
+      question: "Your question",
+      questionPh: "Write your question clearly…",
+      inquirePrivacy: "Your name and contact are only visible to the office staff.",
+      sendInquiry: "Send question",
+      sending: "Sending…",
+      sentTitle: "Sent!",
+      sentBody: "Save your reference number. You'll see the answer in \u201cMy inquiries\u201d.",
+      viewMine: "See my inquiries",
+      askAnother: "Ask another",
+      netError: "Couldn't send. Check your internet connection and try again.",
+      noInquiries: "You have no inquiries yet.",
+      refresh: "Refresh",
+      lastUpdated: "Last updated",
+      offlineCached: "Offline: showing the last saved copy.",
+      reply: "Answer",
+      repliedBy: "Answered by",
+      "status.new": "New",
+      "status.in_progress": "In progress",
+      "status.answered": "Answered",
+      "status.closed": "Closed",
+      "status.local": "Not sent online",
+      allStatus: "All",
+      staffLogin: "For staff: log in",
+      deskTitle: "Staff Desk",
+      deskLoginIntro: "For authorized Municipal staff only.",
+      email2: "Email",
+      password: "Password",
+      login: "Log in",
+      logout: "Log out",
+      loginFailed: "Wrong email or password.",
+      notStaff: "This account is not registered as staff.",
+      deskNotSetup: "The online system isn't set up yet. See SUPABASE-SETUP.md in the repository.",
+      allOffices: "All offices",
+      tabInquiries: "Inquiries",
+      tabPost: "Post announcement",
+      from: "From",
+      save: "Save",
+      saved: "Saved!",
+      status: "Status",
+      replyPh: "Write the answer for the resident…",
+      annTitle: "Title",
+      annTitlePh: "E.g. Free anti-rabies vaccination this Saturday",
+      annCategory: "Category",
+      annOffice: "From office",
+      annBody: "Details",
+      annBodyPh: "When, where, who can join, what to bring…",
+      post: "Post",
+      posted: "Posted!",
+      deleteConfirm: "Delete this announcement?",
+      postedAnn: "Posted",
+      "cat.advisory": "Advisory",
+      "cat.schedule": "Schedule",
+      "cat.program": "Program",
+      "cat.emergency": "Emergency",
+      none: "— None —",
+      noneYet: "None yet.",
+      inquiryCount: "inquiries",
+      desk: "Desk"
     }
   };
 
@@ -278,7 +432,8 @@
       '<div class="office-status">' + statusBadge(o) + "</div>" +
       '<dl class="facts"><dt>' + ic("clock", 16) + t("hours") + "</dt><dd>" + hoursSummary(o) + "</dd>" +
       "<dt>" + ic("map-pin", 16) + t("where") + "</dt><dd>" + officeWhere(o) + "</dd></dl>" +
-      '<div class="actions"><a class="btn ghost" target="_blank" rel="noopener" href="' + mapsUrl(o.map) + '">' + ic("navigation", 16) + t("directions") + "</a>" + call + "</div></li>";
+      '<div class="actions"><a class="btn ghost" target="_blank" rel="noopener" href="' + mapsUrl(o.map) + '">' + ic("navigation", 16) + t("directions") + "</a>" +
+      '<a class="btn ghost" href="#/services/' + o.id + '">' + ic("clipboard-list", 16) + t("seeServices") + "</a>" + call + "</div></li>";
   }
 
   function renderOffices(focus) {
@@ -291,18 +446,69 @@
     }
   }
 
-  function serviceItem(s) {
-    var o = s.officeId && officeById(s.officeId);
+  // ---------- Services (grouped by office) ----------
+
+  function groupById(id) {
+    return officeById(id) || DATA.serviceGroups.filter(function (g) { return g.id === id; })[0];
+  }
+  function servicesOf(id) { return DATA.services.filter(function (s) { return s.officeId === id; }); }
+  function serviceById(id) { return DATA.services.filter(function (s) { return s.id === id; })[0]; }
+  function officeLabel(id) { var o = officeById(id); return o ? o.abbr + " · " + L(o.name) : id; }
+
+  function groupWhere(g) {
+    if (g.where) return esc(L(g.where));
+    if (!g.building) return t("locationPending");
+    var b = DATA.buildings[g.building];
+    return esc(L(b.name)) + " · " + esc(b.address);
+  }
+
+  function serviceBlock(s) {
     var reqs = L(s.requirements).map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("");
-    return '<li><details class="card" id="svc-' + s.id + '"><summary class="row">' +
-      badgeIcon(s.icon) +
-      '<div class="grow"><h3>' + esc(L(s.name)) + '</h3><div class="muted">' + esc(L(s.office)) + "</div></div>" +
+    var ask = officeById(s.officeId)
+      ? '<a class="btn ghost small" href="#/inquire/new/' + s.id + '">' + ic("message-circle-question", 16) + t("askAbout") + "</a>"
+      : "";
+    return '<div class="svc" id="svc-' + s.id + '"><h4>' + esc(L(s.name)) + "</h4><ul>" + reqs + "</ul>" + ask + "</div>";
+  }
+
+  function groupCard(g, list, open) {
+    var isOffice = !!officeById(g.id);
+    return '<li><details class="card grp" id="grp-' + g.id + '"' + (open ? " open" : "") + '><summary class="row">' +
+      badgeIcon(g.icon) + '<div class="grow"><div class="title-row"><span class="abbr">' + esc(g.abbr) + "</span><h3>" + esc(L(g.name)) + "</h3></div>" +
+      '<div class="muted">' + esc(L(g.note)) + " · " + list.length + " " + t("servicesCount") + "</div></div>" +
       '<span class="chev">' + ic("chevron-down", 20) + "</span></summary>" +
-      '<div class="section-label">' + t("requirements") + "</div><ul>" + reqs + "</ul>" +
-      '<div class="section-label">' + t("office") + '</div><div>' + esc(L(s.office)) + "</div>" +
-      (o ? '<div class="svc-office">' + statusBadge(o) + '<div class="muted">' + hoursSummary(o) + "</div>" +
-        '<a class="btn ghost" href="#/offices/' + o.id + '">' + ic("building-2", 16) + t("viewOffice") + "</a></div>" : "") +
-      "</details></li>";
+      '<div class="grp-meta">' + ic("map-pin", 16) + "<span>" + groupWhere(g) + "</span></div>" +
+      (isOffice ? '<div class="grp-meta">' + statusBadge(g) + '<a href="#/offices/' + g.id + '">' + t("officeHoursLink") + "</a></div>" : "") +
+      list.map(serviceBlock).join("") + "</details></li>";
+  }
+
+  function serviceResult(s) {
+    var g = groupById(s.officeId);
+    return '<li><a class="card row link-card" href="#/services/' + s.officeId + '">' + badgeIcon(g.icon) +
+      '<div class="grow"><h3>' + esc(L(s.name)) + '</h3><div class="muted">' + esc(g.abbr + " · " + L(g.name)) + "</div></div>" +
+      ic("chevron-right", 20) + "</a></li>";
+  }
+
+  function renderServices(focus) {
+    view.innerHTML = "<h2>" + t("nav.services") + '</h2><p class="muted">' + t("servicesIntro") + "</p>" +
+      '<div class="search-wrap bordered">' + ic("search", 20) + '<input id="filter" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></div>' +
+      '<p class="note">' + t("reqNote") + '</p><ul class="list" id="svc-list"></ul>';
+
+    var list = document.getElementById("svc-list");
+    function draw(q) {
+      var html = DATA.offices.concat(DATA.serviceGroups).map(function (g) {
+        var items = servicesOf(g.id);
+        if (q && !matches({ a: g.abbr, n: g.name, o: g.note }, q)) {
+          items = items.filter(function (s) { return matches({ n: s.name, r: s.requirements }, q); });
+          if (!items.length) return "";
+        }
+        return groupCard(g, items, !!q || g.id === focus);
+      }).join("");
+      list.innerHTML = html || '<li class="empty">' + t("noResults") + "</li>";
+    }
+    draw("");
+    document.getElementById("filter").addEventListener("input", function (e) { draw(e.target.value.toLowerCase().trim()); });
+    var el = focus && document.getElementById("grp-" + focus);
+    if (el) setTimeout(function () { el.scrollIntoView({ block: "start" }); window.scrollBy(0, -72); }, 0);
   }
 
   function placeItem(p) {
@@ -323,6 +529,7 @@
       "<h3>" + t("govTitle") + '</h3><div class="addr">' + esc(g.address) + "</div><ul>" +
       '<li><a href="' + esc(g.website) + '" target="_blank" rel="noopener">' + ic("globe", 18) + "<span><small>" + t("govSite") + "</small>" + esc(g.website.replace(/^https?:\/\//, "")) + "</span></a></li>" +
       '<li><a href="mailto:' + esc(g.email) + '">' + ic("mail", 18) + "<span><small>" + t("govEmail") + "</small>" + esc(g.email) + "</span></a></li>" +
+      (ONLINE ? '<li><a href="#/desk">' + ic("user-cog", 18) + "<span>" + t("staffLogin") + "</span></a></li>" : "") +
       "</ul></section>";
   }
 
@@ -338,22 +545,19 @@
       return '<a class="tile" href="' + x[0] + '"><span class="tile-icon tone-' + x[3] + '">' + ic(x[1], 26) + "</span>" + x[2] + "</a>";
     }).join("");
 
-    var news = DATA.announcements.map(function (a) {
-      return '<li class="card news"><div class="news-head">' + badgeIcon("megaphone", "amber") +
-        '<div><h3>' + esc(L(a.title)) + '</h3><div class="muted">' + esc(a.date) + "</div></div></div>" +
-        '<p class="desc">' + esc(L(a.body)) + "</p></li>";
-    }).join("");
-
     view.innerHTML =
       '<section class="hero"><h2><span class="script">' + t("welcomeA") + '</span><span class="big">' + t("welcomeB") + "</span></h2>" +
       '<form id="search-form" class="search-wrap" role="search">' + ic("search", 20) + '<input id="q" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></form></section>' +
       '<a class="hotline911" href="tel:911" aria-label="' + t("sos") + '"><span class="hl-icon">' + ic("phone-call", 22) + "</span>" +
       '<span class="hl-label" aria-hidden="true"><span class="hl-top">MONTALBAN</span><span class="hl-pill">HOTLINE</span></span>' +
       '<span class="hl-num" aria-hidden="true">911</span><span class="hl-call" aria-hidden="true">' + t("sosCall") + ic("chevron-right", 16) + "</span></a>" +
-      '<a class="report-cta" href="#/report">' + badgeIcon("message-square-warning", "amber") +
-      '<span class="grow"><strong>' + t("reportCta") + '</strong><span class="muted">' + t("reportCtaSub") + "</span></span>" + ic("chevron-right", 20) + "</a>" +
+      '<div class="cta-row"><a class="cta" href="#/inquire">' + badgeIcon("message-circle-question", "sky") +
+      "<strong>" + t("inquireCta") + '</strong><span class="muted">' + t("inquireCtaSub") + "</span></a>" +
+      '<a class="cta" href="#/report">' + badgeIcon("message-square-warning", "amber") +
+      "<strong>" + t("reportCtaShort") + '</strong><span class="muted">' + t("reportCtaShortSub") + "</span></a></div>" +
       '<div class="section-label">' + t("quick") + '</div><div class="grid">' + tiles + "</div>" +
-      '<div class="section-label">' + t("news") + '</div><ul class="list">' + news + "</ul>" + govCard();
+      '<div class="section-label">' + t("news") + '</div><ul class="list" id="news-list">' + announcementsHtml() + "</ul>" + govCard();
+    refreshAnnouncements();
 
     document.getElementById("search-form").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -368,19 +572,6 @@
     view.innerHTML = "<h2>" + t("nav.hotlines") + "</h2>" +
       '<div class="section-label">' + t("emergency") + '</div><ul class="list">' + em + "</ul>" +
       '<div class="section-label">' + t("local") + '</div><p class="note">' + t("hotlineNote") + '</p><ul class="list">' + lo + "</ul>";
-  }
-
-  function renderServices() {
-    view.innerHTML = "<h2>" + t("nav.services") + "</h2>" +
-      '<div class="search-wrap bordered">' + ic("search", 20) + '<input id="filter" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></div>' +
-      '<p class="note">' + t("reqNote") + '</p><ul class="list" id="svc-list">' + DATA.services.map(serviceItem).join("") + "</ul>";
-
-    var list = document.getElementById("svc-list");
-    document.getElementById("filter").addEventListener("input", function (e) {
-      var q = e.target.value.toLowerCase();
-      var hits = DATA.services.filter(function (s) { return matches(s, q); });
-      list.innerHTML = hits.length ? hits.map(serviceItem).join("") : '<li class="empty">' + t("noResults") + "</li>";
-    });
   }
 
   function renderBarangays() {
@@ -523,45 +714,524 @@
     var ch = DATA.report;
     var photo = pendingPhotoRef === ref ? pendingPhoto : null;
 
-    var buttons = "";
-    if (navigator.share) buttons += '<button type="button" id="share" class="btn">' + ic("share-2", 16) + t("share") + "</button>";
-    if (ch.sms) buttons += '<a class="btn" href="sms:' + esc(ch.sms) + "?body=" + encodeURIComponent(text) + '">' + ic("message-circle", 16) + t("sms") + "</a>";
-    if (ch.email) buttons += '<a class="btn" href="mailto:' + esc(ch.email) + "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(text) + '">' + ic("mail", 16) + t("email") + "</a>";
-    buttons += '<button type="button" id="copy" class="btn ghost">' + ic("copy", 16) + t("copy") + "</button>";
-
     view.innerHTML = "<h2>" + t("sendVia") + "</h2>" +
       '<div class="card"><div class="muted">' + t("refNo") + "</div><h3 class=\"ref\">" + esc(r.ref) + "</h3></div>" +
       '<p class="note">' + (ch.sms || ch.email ? t("sendNote") : t("noChannel")) + "</p>" +
-      '<div class="actions">' + buttons + "</div>" +
+      shareButtons({ text: text, subject: subject, sms: ch.sms, email: ch.email }) +
       '<pre class="card preview">' + esc(text) + "</pre>" +
       '<div class="actions"><a class="btn ghost" href="#/report">' + ic("plus", 16) + t("newReport") + "</a>" +
-      '<button type="button" id="del" class="btn ghost danger">' + ic("trash-2", 16) + t("deleteReport") + "</button></div>";
-
-    var shareBtn = document.getElementById("share");
-    if (shareBtn) shareBtn.addEventListener("click", function () {
-      var payload = { title: subject, text: text };
-      if (photo && navigator.canShare && navigator.canShare({ files: [photo] })) payload.files = [photo];
-      navigator.share(payload).catch(function () {});
-    });
-
-    document.getElementById("copy").addEventListener("click", function (e) {
-      var btn = e.currentTarget;
-      var done = function () { btn.textContent = "✓ " + t("copied"); };
-      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, fallbackCopy);
-      else fallbackCopy();
-      function fallbackCopy() {
-        var ta = document.createElement("textarea");
-        ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand("copy"); done(); } catch (err) { /* ignore */ }
-        ta.remove();
-      }
-    });
+      '<button type="button" id="del" class="btn danger">' + ic("trash-2", 16) + t("deleteReport") + "</button></div>";
+    wireShareButtons(view, { text: text, subject: subject, photo: photo });
 
     document.getElementById("del").addEventListener("click", function () {
       saveReports(loadReports().filter(function (x) { return x.ref !== ref; }));
       location.hash = "#/report";
     });
+  }
+
+  // ---------- Online database (Supabase, configured in config.js) ----------
+  // Without a configuration the app still works: inquiries are shared or
+  // copied like reports, and the staff Desk explains it isn't set up.
+
+  var CFG = window.APP_CONFIG || {};
+  var ONLINE = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
+  var SESSION_KEY = "staffSession", MY_KEY = "myInquiries", ANN_KEY = "annCache";
+
+  function getJSON(key, fallback) {
+    try { var v = JSON.parse(localStorage.getItem(key)); return v == null ? fallback : v; } catch (e) { return fallback; }
+  }
+  function setJSON(key, v) {
+    try { if (v == null) localStorage.removeItem(key); else localStorage.setItem(key, JSON.stringify(v)); } catch (e) { /* storage blocked */ }
+  }
+
+  // Private random token tying this phone to its own inquiries.
+  function clientToken() {
+    var tok = getJSON("clientToken", null);
+    if (!tok) {
+      var a = new Uint8Array(24);
+      crypto.getRandomValues(a);
+      tok = Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+      setJSON("clientToken", tok);
+    }
+    return tok;
+  }
+
+  function request(method, path, body, opts) {
+    opts = opts || {};
+    var sess = opts.auth ? getJSON(SESSION_KEY, null) : null;
+    var headers = { apikey: CFG.supabaseAnonKey, "Content-Type": "application/json" };
+    // Staff send their login token. Residents send the legacy JWT anon key too;
+    // newer "sb_publishable_" keys are not JWTs and go only in the apikey header.
+    if (sess) headers.Authorization = "Bearer " + sess.access_token;
+    else if (/^eyJ/.test(CFG.supabaseAnonKey)) headers.Authorization = "Bearer " + CFG.supabaseAnonKey;
+    if (opts.prefer) headers.Prefer = opts.prefer;
+    return fetch(CFG.supabaseUrl.replace(/\/$/, "") + path, {
+      method: method, headers: headers, body: body == null ? undefined : JSON.stringify(body)
+    }).then(function (r) {
+      return r.text().then(function (txt) {
+        var data = null;
+        try { data = txt ? JSON.parse(txt) : null; } catch (e) { data = txt; }
+        if (!r.ok) {
+          var err = new Error((data && (data.message || data.error_description || data.error)) || "HTTP " + r.status);
+          err.status = r.status;
+          throw err;
+        }
+        return data;
+      });
+    });
+  }
+
+  function rpc(name, params, opts) { return request("POST", "/rest/v1/rpc/" + name, params || {}, opts); }
+
+  // Refresh the staff login when it is about to expire.
+  function freshSession() {
+    var s = getJSON(SESSION_KEY, null);
+    if (!s) { var e = new Error("not logged in"); e.status = 401; return Promise.reject(e); }
+    if (Date.now() / 1000 < s.expires_at - 60) return Promise.resolve(s);
+    return request("POST", "/auth/v1/token?grant_type=refresh_token", { refresh_token: s.refresh_token }).then(function (d) {
+      s.access_token = d.access_token;
+      s.refresh_token = d.refresh_token;
+      s.expires_at = Math.floor(Date.now() / 1000) + d.expires_in;
+      setJSON(SESSION_KEY, s);
+      return s;
+    });
+  }
+
+  function staffRequest(method, path, body, prefer) {
+    return freshSession()
+      .then(function () { return request(method, path, body, { auth: true, prefer: prefer }); })
+      .catch(function (e) {
+        if (e.status === 401) { setJSON(SESSION_KEY, null); updateStaffUi(); }
+        throw e;
+      });
+  }
+
+  function staffLogin(email, password) {
+    return request("POST", "/auth/v1/token?grant_type=password", { email: email, password: password }).then(function (d) {
+      var s = { access_token: d.access_token, refresh_token: d.refresh_token, expires_at: Math.floor(Date.now() / 1000) + d.expires_in };
+      setJSON(SESSION_KEY, s);
+      return rpc("whoami", {}, { auth: true }).then(function (rows) {
+        if (!rows || !rows.length) {
+          staffLogout();
+          var e = new Error(t("notStaff"));
+          e.notStaff = true;
+          throw e;
+        }
+        s.name = rows[0].display_name;
+        s.office = rows[0].office_id;
+        setJSON(SESSION_KEY, s);
+        return s;
+      });
+    });
+  }
+
+  function staffLogout() {
+    if (getJSON(SESSION_KEY, null)) request("POST", "/auth/v1/logout", null, { auth: true }).catch(function () {});
+    setJSON(SESSION_KEY, null);
+    updateStaffUi();
+  }
+
+  function updateStaffUi() {
+    var btn = document.getElementById("desk-btn");
+    if (btn) btn.hidden = !(ONLINE && getJSON(SESSION_KEY, null));
+  }
+
+  function fmtDate(d) {
+    return new Date(d).toLocaleDateString(lang === "fil" ? "fil-PH" : "en-PH", { month: "short", day: "numeric", year: "numeric" });
+  }
+
+  function segTabs(active, items) {
+    return '<div class="seg" role="tablist">' + items.map(function (x) {
+      var on = x[1] === active;
+      return '<a role="tab" href="' + x[0] + '"' + (on ? ' class="on" aria-selected="true"' : "") + ">" + x[2] + "</a>";
+    }).join("") + "</div>";
+  }
+
+  function officeOptions(selected, noneLabel) {
+    return '<option value="">' + (noneLabel || t("choose")) + "</option>" + DATA.offices.map(function (o) {
+      return '<option value="' + o.id + '"' + (o.id === selected ? " selected" : "") + ">" + esc(o.abbr + " · " + L(o.name)) + "</option>";
+    }).join("");
+  }
+
+  // Share / SMS / email / copy buttons for text the app hands to other apps.
+  function shareButtons(o) {
+    var b = "";
+    if (navigator.share) b += '<button type="button" class="btn js-share">' + ic("share-2", 16) + t("share") + "</button>";
+    if (o.sms) b += '<a class="btn" href="sms:' + esc(o.sms) + "?body=" + encodeURIComponent(o.text) + '">' + ic("message-circle", 16) + t("sms") + "</a>";
+    if (o.email) b += '<a class="btn" href="mailto:' + esc(o.email) + "?subject=" + encodeURIComponent(o.subject) +
+      "&body=" + encodeURIComponent(o.text) + '">' + ic("mail", 16) + t("email") + "</a>";
+    return '<div class="actions">' + b + '<button type="button" class="btn ghost js-copy">' + ic("copy", 16) + t("copy") + "</button></div>";
+  }
+
+  function wireShareButtons(root, o) {
+    var share = root.querySelector(".js-share");
+    if (share) share.addEventListener("click", function () {
+      var payload = { title: o.subject, text: o.text };
+      if (o.photo && navigator.canShare && navigator.canShare({ files: [o.photo] })) payload.files = [o.photo];
+      navigator.share(payload).catch(function () {});
+    });
+    root.querySelector(".js-copy").addEventListener("click", function (e) {
+      var btn = e.currentTarget;
+      var done = function () { btn.innerHTML = ic("check", 16) + t("copied"); };
+      if (navigator.clipboard) navigator.clipboard.writeText(o.text).then(done, fallbackCopy);
+      else fallbackCopy();
+      function fallbackCopy() {
+        var ta = document.createElement("textarea");
+        ta.value = o.text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); done(); } catch (err) { /* ignore */ }
+        ta.remove();
+      }
+    });
+  }
+
+  // ---------- Inquiries (residents) ----------
+
+  function saveMine(q) { setJSON(MY_KEY, [q].concat(getJSON(MY_KEY, [])).slice(0, 50)); }
+
+  function inquireTabs(active) {
+    var n = getJSON(MY_KEY, []).length;
+    return segTabs(active, [
+      ["#/inquire", "ask", ic("message-circle-question", 16) + t("tabAsk")],
+      ["#/inquire/mine", "mine", ic("inbox", 16) + t("tabMine") + (n ? " (" + n + ")" : "")]
+    ]);
+  }
+
+  function renderInquire(arg, arg2) {
+    if (arg === "mine") return renderMyInquiries();
+    if (arg === "sent") return renderInquirySent(arg2);
+
+    var svc = arg === "new" && arg2 ? serviceById(arg2) : null;
+    var officeId = svc && officeById(svc.officeId) ? svc.officeId : "";
+    var brgys = DATA.barangays.map(function (b) { return '<option value="' + esc(b) + '">' + esc(b) + "</option>"; }).join("");
+
+    view.innerHTML = "<h2>" + t("inquireTitle") + "</h2>" + inquireTabs("ask") +
+      '<p class="muted">' + (ONLINE ? t("inquireIntro") : t("inquireOfflineIntro")) + "</p>" +
+      '<form id="inq-form" class="card form" novalidate>' +
+      field(t("office2"), '<select name="office" required>' + officeOptions(officeId) + "</select>", true) +
+      field(t("topic"), '<input name="topic" maxlength="200" placeholder="' + t("topicPh") + '" value="' + (svc ? esc(L(svc.name)) : "") + '">') +
+      field(t("question"), '<textarea name="question" rows="5" required minlength="5" maxlength="2000" placeholder="' + t("questionPh") + '"></textarea>', true) +
+      field(t("name"), '<input name="name" maxlength="120" autocomplete="name">') +
+      field(t("contact"), '<input name="contact" maxlength="120" autocomplete="tel">') +
+      field(t("barangay"), '<select name="barangay"><option value="">' + t("choose") + "</option>" + brgys + "</select>") +
+      '<p class="muted small with-icon">' + ic("lock", 14) + t("inquirePrivacy") + "</p>" +
+      '<p id="form-error" class="error" role="alert" hidden></p>' +
+      '<button class="btn wide" type="submit">' + ic("send", 18) + t("sendInquiry") + "</button></form>";
+
+    var form = document.getElementById("inq-form");
+    var err = document.getElementById("form-error");
+    var btn = form.querySelector("button[type=submit]");
+    form.addEventListener("input", function () { err.hidden = true; });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity() || form.question.value.trim().length < 5) {
+        err.textContent = t("fillRequired"); err.hidden = false; form.classList.add("touched");
+        return;
+      }
+      var q = {
+        office_id: form.office.value, topic: form.topic.value.trim(), question: form.question.value.trim(),
+        name: form.name.value.trim(), contact: form.contact.value.trim(), barangay: form.barangay.value, created: Date.now()
+      };
+      if (!ONLINE) {
+        q.ref = refNo().replace("MTB", "INQ");
+        q.local = true;
+        saveMine(q);
+        location.hash = "#/inquire/sent/" + q.ref;
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = t("sending");
+      rpc("submit_inquiry", {
+        p_office_id: q.office_id, p_topic: q.topic, p_question: q.question, p_name: q.name,
+        p_contact: q.contact, p_barangay: q.barangay, p_client_token: clientToken()
+      }).then(function (ref) {
+        // Name and contact stay with the office, not in this phone's history.
+        q.ref = ref; q.status = "new"; delete q.name; delete q.contact;
+        saveMine(q);
+        location.hash = "#/inquire/sent/" + ref;
+      }).catch(function (ex) {
+        btn.disabled = false;
+        btn.innerHTML = ic("send", 18) + t("sendInquiry");
+        err.textContent = ex.status ? ex.message : t("netError");
+        err.hidden = false;
+      });
+    });
+  }
+
+  function inquiryText(q) {
+    var lines = [
+      "TANONG SA OPISINA / INQUIRY",
+      "Ref. No.: " + q.ref,
+      "Opisina / Office: " + officeLabel(q.office_id)
+    ];
+    if (q.topic) lines.push("Tungkol / Topic: " + q.topic);
+    lines.push("", q.question);
+    var who = [q.name, q.contact, q.barangay && "Brgy. " + q.barangay].filter(Boolean).join(" — ");
+    if (who) lines.push("", "Mula kay / From: " + who);
+    lines.push("", "(Ipinadala gamit ang Bayan ng Montalban app)");
+    return lines.join("\n");
+  }
+
+  function renderInquirySent(ref) {
+    var q = getJSON(MY_KEY, []).filter(function (x) { return x.ref === ref; })[0];
+    if (!q) { location.hash = "#/inquire"; return; }
+    var text = inquiryText(q);
+    view.innerHTML = "<h2>" + t("inquireTitle") + "</h2>" +
+      '<div class="card sent">' + ic(q.local ? "send" : "circle-check", 44) +
+      "<h3>" + (q.local ? t("sendVia") : t("sentTitle")) + '</h3><div class="muted">' + t("refNo") + '</div><div class="ref">' + esc(ref) + "</div>" +
+      (q.local ? "" : '<p class="muted">' + t("sentBody") + "</p>") + "</div>" +
+      (q.local ? '<p class="note">' + t("noChannel") + "</p>" + shareButtons({ text: text, subject: "Inquiry " + ref }) + '<pre class="card preview">' + esc(text) + "</pre>" : "") +
+      '<div class="actions"><a class="btn" href="#/inquire/mine">' + ic("inbox", 16) + t("viewMine") + "</a>" +
+      '<a class="btn ghost" href="#/inquire">' + ic("plus", 16) + t("askAnother") + "</a></div>";
+    if (q.local) wireShareButtons(view, { text: text, subject: "Inquiry " + ref });
+  }
+
+  function statusPill(st) { return '<span class="pill st-' + st + '">' + t("status." + st) + "</span>"; }
+
+  function inquiryCard(q) {
+    var st = q.local ? "local" : q.status || "new";
+    return '<li class="card inq"><div class="inq-head"><span class="ref small">' + esc(q.ref) + "</span>" + statusPill(st) + "</div>" +
+      "<h3>" + esc(q.topic || officeLabel(q.office_id)) + '</h3><div class="muted">' + esc(officeLabel(q.office_id)) + " · " + fmtDate(q.created_at || q.created) + "</div>" +
+      '<p class="desc">' + esc(q.question).replace(/\n/g, "<br>") + "</p>" +
+      (q.reply ? '<div class="reply"><div class="reply-label">' + ic("reply", 16) + t("reply") + (q.replied_by ? " · " + esc(q.replied_by) : "") + "</div>" +
+        esc(q.reply).replace(/\n/g, "<br>") + "</div>" : "") +
+      (q.local ? '<a class="btn ghost small" href="#/inquire/sent/' + esc(q.ref) + '">' + ic("share-2", 16) + t("share") + "</a>" : "") + "</li>";
+  }
+
+  function renderMyInquiries() {
+    var mine = getJSON(MY_KEY, []);
+    var hasOnline = ONLINE && mine.some(function (q) { return !q.local; });
+    view.innerHTML = "<h2>" + t("inquireTitle") + "</h2>" + inquireTabs("mine") +
+      (hasOnline ? '<div class="toolbar"><span id="inq-status" class="muted small"></span><button id="inq-refresh" class="btn ghost small" type="button">' +
+        ic("refresh-cw", 16) + t("refresh") + "</button></div>" : "") +
+      '<ul class="list" id="inq-list">' + (mine.length ? mine.map(inquiryCard).join("") : '<li class="empty">' + t("noInquiries") + "</li>") + "</ul>";
+    if (!hasOnline) return;
+
+    function load() {
+      var status = document.getElementById("inq-status");
+      status.textContent = "…";
+      rpc("my_inquiries", { p_client_token: clientToken() }).then(function (rows) {
+        var byRef = {};
+        rows.forEach(function (r) { byRef[r.ref] = r; });
+        var merged = getJSON(MY_KEY, []).map(function (q) { return byRef[q.ref] ? Object.assign(q, byRef[q.ref]) : q; });
+        setJSON(MY_KEY, merged);
+        var list = document.getElementById("inq-list");
+        if (!list) return; // navigated away
+        list.innerHTML = merged.map(inquiryCard).join("");
+        document.getElementById("inq-status").textContent = t("lastUpdated") + ": " +
+          new Date().toLocaleTimeString(lang === "fil" ? "fil-PH" : "en-PH", { hour: "numeric", minute: "2-digit" });
+      }).catch(function () {
+        var s = document.getElementById("inq-status");
+        if (s) s.textContent = t("offlineCached");
+      });
+    }
+    document.getElementById("inq-refresh").addEventListener("click", load);
+    load();
+  }
+
+  // ---------- Announcements ----------
+
+  function annItem(a, staffTools) {
+    var online = !!a.created_at;
+    var cat = online ? a.category : "advisory";
+    var o = online && a.office_id ? officeById(a.office_id) : null;
+    var meta = [online ? fmtDate(a.created_at) : a.date, o ? o.abbr : null].filter(Boolean).join(" · ");
+    return '<li class="card news"><div class="news-head">' +
+      badgeIcon(cat === "emergency" ? "siren" : "megaphone", cat === "emergency" ? "red" : "amber") +
+      '<div class="grow"><h3>' + esc(online ? a.title : L(a.title)) + '</h3><div class="muted">' + esc(meta) + "</div></div>" +
+      (online ? '<span class="pill cat-' + cat + '">' + t("cat." + cat) + "</span>" : "") + "</div>" +
+      '<p class="desc">' + esc(online ? a.body : L(a.body)).replace(/\n/g, "<br>") + "</p>" +
+      (staffTools ? '<div class="ann-tools"><span class="muted small">' + esc(a.posted_by || "") + '</span><button type="button" class="btn danger small js-del" data-id="' + esc(a.id) + '">' +
+        ic("trash-2", 16) + t("deleteReport") + "</button></div>" : "") + "</li>";
+  }
+
+  function announcementsHtml() {
+    return getJSON(ANN_KEY, []).map(function (a) { return annItem(a); })
+      .concat(DATA.announcements.map(function (a) { return annItem(a); })).join("");
+  }
+
+  function refreshAnnouncements() {
+    if (!ONLINE) return Promise.resolve([]);
+    return request("GET", "/rest/v1/announcements?select=*&order=created_at.desc&limit=30").then(function (rows) {
+      setJSON(ANN_KEY, rows);
+      var el = document.getElementById("news-list");
+      if (el) el.innerHTML = announcementsHtml();
+      return rows;
+    }).catch(function () { return getJSON(ANN_KEY, []); });
+  }
+
+  // ---------- Staff Desk ----------
+
+  var deskFilter = "open";
+
+  function renderDesk(tab) {
+    if (!ONLINE) {
+      view.innerHTML = "<h2>" + t("deskTitle") + '</h2><p class="note">' + t("deskNotSetup") + "</p>";
+      return;
+    }
+    var s = getJSON(SESSION_KEY, null);
+    if (!s) return renderDeskLogin();
+    view.innerHTML = '<div class="desk-head"><div><h2>' + t("deskTitle") + '</h2><div class="muted">' + esc(s.name) + " · " +
+      esc(s.office ? officeLabel(s.office) : t("allOffices")) + '</div></div><button id="logout" class="btn ghost small" type="button">' +
+      ic("log-out", 16) + t("logout") + "</button></div>" +
+      segTabs(tab === "post" ? "post" : "inq", [
+        ["#/desk", "inq", ic("inbox", 16) + t("tabInquiries")],
+        ["#/desk/post", "post", ic("megaphone", 16) + t("tabPost")]
+      ]) + '<div id="desk-body"></div>';
+    document.getElementById("logout").addEventListener("click", function () { staffLogout(); location.hash = "#/"; });
+    if (tab === "post") deskPost(s); else deskInquiries();
+  }
+
+  function renderDeskLogin() {
+    view.innerHTML = "<h2>" + t("deskTitle") + '</h2><p class="muted">' + t("deskLoginIntro") + "</p>" +
+      '<form id="login-form" class="card form" novalidate>' +
+      field(t("email2"), '<input name="email" type="email" required autocomplete="username">', true) +
+      field(t("password"), '<input name="password" type="password" required autocomplete="current-password">', true) +
+      '<p id="form-error" class="error" role="alert" hidden></p>' +
+      '<button class="btn wide" type="submit">' + ic("log-in", 18) + t("login") + "</button></form>";
+    var form = document.getElementById("login-form");
+    var err = document.getElementById("form-error");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { err.textContent = t("fillRequired"); err.hidden = false; return; }
+      var btn = form.querySelector("button");
+      btn.disabled = true;
+      staffLogin(form.email.value.trim(), form.password.value).then(function () {
+        updateStaffUi();
+        route();
+      }).catch(function (ex) {
+        btn.disabled = false;
+        err.textContent = ex.notStaff ? t("notStaff") : ex.status ? t("loginFailed") : t("netError");
+        err.hidden = false;
+      });
+    });
+  }
+
+  function deskCard(r) {
+    var opts = ["new", "in_progress", "answered", "closed"].map(function (st) {
+      return '<option value="' + st + '"' + (st === r.status ? " selected" : "") + ">" + t("status." + st) + "</option>";
+    }).join("");
+    var who = [r.name, r.contact, r.barangay && "Brgy. " + r.barangay].filter(Boolean).join(" · ");
+    return '<li class="card inq" data-ref="' + esc(r.ref) + '"><div class="inq-head"><span class="ref small">' + esc(r.ref) + "</span>" + statusPill(r.status) + "</div>" +
+      "<h3>" + esc(r.topic || officeLabel(r.office_id)) + '</h3><div class="muted">' + esc(officeLabel(r.office_id)) + " · " + fmtDate(r.created_at) + "</div>" +
+      '<p class="desc">' + esc(r.question).replace(/\n/g, "<br>") + "</p>" +
+      (who ? '<div class="who">' + ic("user-round", 16) + "<span>" + esc(who) + "</span></div>" : "") +
+      '<div class="desk-reply"><textarea rows="3" maxlength="4000" aria-label="' + t("reply") + '" placeholder="' + t("replyPh") + '">' + esc(r.reply || "") + "</textarea>" +
+      '<div class="desk-actions"><select aria-label="' + t("status") + '">' + opts + '</select><button type="button" class="btn small js-save">' +
+      ic("check", 16) + t("save") + "</button></div>" +
+      (r.replied_by ? '<div class="muted small">' + t("repliedBy") + ": " + esc(r.replied_by) + "</div>" : "") + "</div></li>";
+  }
+
+  function deskInquiries() {
+    var body = document.getElementById("desk-body");
+    var filters = [["open", t("status.new") + " / " + t("status.in_progress")], ["answered", t("status.answered")], ["closed", t("status.closed")], ["all", t("allStatus")]];
+    body.innerHTML = '<div class="chips-row">' + filters.map(function (f) {
+      return '<button type="button" class="fchip' + (f[0] === deskFilter ? " on" : "") + '" data-f="' + f[0] + '">' + f[1] + "</button>";
+    }).join("") + '</div><div class="toolbar"><span id="desk-status" class="muted small"></span><button id="desk-refresh" class="btn ghost small" type="button">' +
+      ic("refresh-cw", 16) + t("refresh") + '</button></div><ul class="list" id="desk-list"></ul>';
+    var list = document.getElementById("desk-list");
+    var status = document.getElementById("desk-status");
+
+    function load() {
+      var q = "/rest/v1/inquiries?select=*&order=created_at.desc&limit=200";
+      if (deskFilter === "open") q += "&status=in.(new,in_progress)";
+      else if (deskFilter !== "all") q += "&status=eq." + deskFilter;
+      status.textContent = "…";
+      staffRequest("GET", q).then(function (rows) {
+        list.innerHTML = rows.length ? rows.map(deskCard).join("") : '<li class="empty">' + t("noneYet") + "</li>";
+        status.textContent = rows.length + " " + t("inquiryCount");
+      }).catch(function (e) {
+        if (e.status === 401) return route();
+        status.textContent = t("netError");
+      });
+    }
+
+    body.querySelector(".chips-row").addEventListener("click", function (e) {
+      var b = e.target.closest(".fchip");
+      if (!b) return;
+      deskFilter = b.getAttribute("data-f");
+      body.querySelectorAll(".fchip").forEach(function (x) { x.classList.toggle("on", x === b); });
+      load();
+    });
+    document.getElementById("desk-refresh").addEventListener("click", load);
+
+    list.addEventListener("click", function (e) {
+      var btn = e.target.closest(".js-save");
+      if (!btn) return;
+      var li = btn.closest("[data-ref]");
+      var reply = li.querySelector("textarea").value.trim();
+      var st = li.querySelector("select").value;
+      if (reply && st === "new") st = "answered"; // a reply with status left at "new" means it's answered
+      btn.disabled = true;
+      staffRequest("PATCH", "/rest/v1/inquiries?ref=eq." + encodeURIComponent(li.getAttribute("data-ref")),
+        { status: st, reply: reply || null }, "return=representation").then(function (rows) {
+        var tmp = document.createElement("ul");
+        tmp.innerHTML = deskCard(rows[0]);
+        var fresh = tmp.firstChild;
+        li.replaceWith(fresh);
+        var saved = fresh.querySelector(".js-save");
+        saved.innerHTML = ic("check", 16) + t("saved");
+        setTimeout(function () { saved.innerHTML = ic("check", 16) + t("save"); }, 1800);
+      }).catch(function (ex) {
+        btn.disabled = false;
+        if (ex.status === 401) return route();
+        alert(ex.status ? ex.message : t("netError"));
+      });
+    });
+    load();
+  }
+
+  function deskPost(s) {
+    var body = document.getElementById("desk-body");
+    var cats = ["advisory", "schedule", "program", "emergency"].map(function (c) {
+      return '<option value="' + c + '">' + t("cat." + c) + "</option>";
+    }).join("");
+    body.innerHTML = '<form id="ann-form" class="card form" novalidate>' +
+      field(t("annTitle"), '<input name="title" required minlength="3" maxlength="160" placeholder="' + t("annTitlePh") + '">', true) +
+      field(t("annCategory"), '<select name="category">' + cats + "</select>") +
+      field(t("annOffice"), '<select name="office">' + officeOptions(s.office || "", t("none")) + "</select>") +
+      field(t("annBody"), '<textarea name="body" rows="5" required minlength="3" maxlength="4000" placeholder="' + t("annBodyPh") + '"></textarea>', true) +
+      '<p id="form-error" class="error" role="alert" hidden></p>' +
+      '<button class="btn wide" type="submit">' + ic("send", 18) + t("post") + "</button></form>" +
+      '<div class="section-label">' + t("postedAnn") + '</div><ul class="list" id="ann-list"></ul>';
+
+    var form = document.getElementById("ann-form");
+    var err = document.getElementById("form-error");
+    var annList = document.getElementById("ann-list");
+    function load() {
+      refreshAnnouncements().then(function (rows) {
+        annList.innerHTML = rows.length ? rows.map(function (a) { return annItem(a, true); }).join("") : '<li class="empty">' + t("noneYet") + "</li>";
+      });
+    }
+    form.addEventListener("input", function () { err.hidden = true; });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { err.textContent = t("fillRequired"); err.hidden = false; form.classList.add("touched"); return; }
+      var btn = form.querySelector("button[type=submit]");
+      btn.disabled = true;
+      staffRequest("POST", "/rest/v1/announcements", {
+        title: form.title.value.trim(), body: form.body.value.trim(),
+        category: form.category.value, office_id: form.office.value || null
+      }, "return=minimal").then(function () {
+        form.reset();
+        form.classList.remove("touched");
+        btn.disabled = false;
+        btn.innerHTML = ic("check", 18) + t("posted");
+        setTimeout(function () { btn.innerHTML = ic("send", 18) + t("post"); }, 1800);
+        load();
+      }).catch(function (ex) {
+        btn.disabled = false;
+        if (ex.status === 401) return route();
+        err.textContent = ex.status ? ex.message : t("netError");
+        err.hidden = false;
+      });
+    });
+    annList.addEventListener("click", function (e) {
+      var b = e.target.closest(".js-del");
+      if (!b || !confirm(t("deleteConfirm"))) return;
+      staffRequest("DELETE", "/rest/v1/announcements?id=eq." + encodeURIComponent(b.getAttribute("data-id"))).then(load)
+        .catch(function (ex) { alert(ex.status ? ex.message : t("netError")); });
+    });
+    load();
   }
 
   // ---------- Search ----------
@@ -581,7 +1251,7 @@
 
     var html = "<h2>" + t("results") + " “" + esc(q) + "”</h2>";
     if (h.length) html += '<div class="section-label">' + t("nav.hotlines") + '</div><ul class="list">' + h.map(hotlineItem).join("") + "</ul>";
-    if (s.length) html += '<div class="section-label">' + t("nav.services") + '</div><ul class="list">' + s.map(serviceItem).join("") + "</ul>";
+    if (s.length) html += '<div class="section-label">' + t("nav.services") + '</div><ul class="list">' + s.map(serviceResult).join("") + "</ul>";
     if (o.length) html += '<div class="section-label">' + t("nav.offices") + '</div><ul class="list">' + o.map(officeItem).join("") + "</ul>";
     if (b.length) html += '<div class="section-label">' + t("nav.barangays") + '</div><div class="chips">' + b.map(barangayChip).join("") + "</div>";
     if (p.length) html += '<div class="section-label">' + t("nav.places") + '</div><ul class="list">' + p.map(placeItem).join("") + "</ul>";
@@ -594,7 +1264,6 @@
   var routes = {
     "": ["home", renderHome],
     hotlines: ["hotlines", renderHotlines],
-    services: ["services", renderServices],
     barangays: ["barangays", renderBarangays],
     places: ["places", renderPlaces]
   };
@@ -605,6 +1274,15 @@
     if (parts[0] === "search" && parts[1]) {
       tab = "home";
       renderSearch(decodeURIComponent(parts[1]));
+    } else if (parts[0] === "services") {
+      tab = "services";
+      renderServices(parts[1] && decodeURIComponent(parts[1]));
+    } else if (parts[0] === "inquire") {
+      tab = "inquire";
+      renderInquire(parts[1], parts[2] && decodeURIComponent(parts[2]));
+    } else if (parts[0] === "desk") {
+      tab = "desk";
+      renderDesk(parts[1]);
     } else if (parts[0] === "offices") {
       tab = "offices";
       renderOffices(parts[1] && decodeURIComponent(parts[1]));
@@ -649,6 +1327,7 @@
     topbar.classList.toggle("scrolled", window.scrollY > 4);
   }, { passive: true });
 
+  updateStaffUi();
   window.addEventListener("hashchange", route);
   applyLang();
 

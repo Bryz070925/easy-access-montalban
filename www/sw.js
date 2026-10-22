@@ -1,7 +1,7 @@
 // Offline support: cache the app shell so hotlines and requirements
 // are still available without signal. Bump VERSION when files change.
-var VERSION = "easy-access-v10";
-var FILES = ["./", "index.html", "styles.css", "app.js", "icons.js", "data.js", "manifest.json", "img/montalban-logo.jpg", "icons/icon-192.png", "icons/icon-512.png", "img/hero-landscape.svg",
+var VERSION = "easy-access-v11";
+var FILES = ["./", "index.html", "styles.css", "app.js", "config.js", "icons.js", "data.js", "manifest.json", "img/montalban-logo.jpg", "icons/icon-192.png", "icons/icon-512.png", "img/hero-landscape.svg",
   "fonts/montserrat-latin-500-normal.woff2", "fonts/montserrat-latin-700-normal.woff2",
   "fonts/montserrat-latin-800-normal.woff2", "fonts/montserrat-latin-900-normal.woff2",
   "fonts/kaushan-script-latin-400-normal.woff2"];
@@ -23,6 +23,8 @@ self.addEventListener("activate", function (e) {
 // its HTTP cache, which GitHub Pages lets it keep for 10 minutes.
 self.addEventListener("fetch", function (e) {
   if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
+  // Never touch database calls (they carry an API key and private data).
+  if (e.request.headers.has("apikey") || e.request.headers.has("authorization")) return;
   e.respondWith(
     fetch(e.request.url, { cache: "no-cache" }).then(function (res) {
       var copy = res.clone();

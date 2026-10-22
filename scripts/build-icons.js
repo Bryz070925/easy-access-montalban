@@ -15,7 +15,12 @@ const ICONS = [
   // places
   "waves", "mountain", "mountain-snow", "footprints", "flashlight",
   // report categories
-  "construction", "cloud-rain", "lightbulb", "droplets", "tree-pine", "volume-2", "circle-help"
+  "construction", "cloud-rain", "lightbulb", "droplets", "tree-pine", "volume-2", "circle-help",
+  // offices added with the services catalog
+  "briefcase", "sprout", "leaf",
+  // inquiries & staff desk
+  "message-circle-question", "inbox", "send", "reply", "refresh-cw", "lock", "user-cog", "log-in", "log-out",
+  "circle-check", "check"
 ];
 
 const dir = path.join(__dirname, "..", "node_modules", "lucide-static", "icons");
