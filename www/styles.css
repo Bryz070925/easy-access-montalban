@@ -41,19 +41,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
-  padding-top: calc(10px + env(safe-area-inset-top));
-  background: var(--green);
-  color: #fff;
+  gap: 12px;
+  padding: 8px 16px;
+  padding-top: calc(8px + env(safe-area-inset-top));
+  /* White in both themes: the logo artwork has a white background. */
+  background: #fff;
+  border-bottom: 3px solid var(--green);
 }
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand h1 { margin: 0; font-size: 1.1rem; letter-spacing: .3px; }
-.brand p { margin: 0; font-size: .8rem; opacity: .85; }
+.brand { margin: 0; min-width: 0; line-height: 0; }
+.brand img { height: 52px; width: auto; max-width: 100%; display: block; }
 
 .lang {
-  border: 1px solid rgba(255,255,255,.6);
+  flex-shrink: 0;
+  border: 1.5px solid var(--green);
   background: transparent;
-  color: #fff;
+  color: var(--green);
   font-weight: 700;
   border-radius: 999px;
   padding: 6px 14px;
