@@ -12,8 +12,8 @@
       "nav.services": "Serbisyo",
       "nav.barangays": "Barangay",
       "nav.places": "Pasyalan",
-      welcomeA: "Mabuhay,",
-      welcomeB: "Montalbeño!",
+      welcomeA: "Magandang Araw,",
+      welcomeB: "Disiplinadong Montalbeño!",
       search: "Maghanap ng serbisyo, hotline, barangay…",
       sos: "Emergency: tumawag sa Montalban Hotline 911",
       sosCall: "Tumawag",
@@ -88,8 +88,8 @@
       "nav.services": "Services",
       "nav.barangays": "Barangays",
       "nav.places": "Places",
-      welcomeA: "Welcome,",
-      welcomeB: "Montalbeño!",
+      welcomeA: "Magandang Araw,",
+      welcomeB: "Disiplinadong Montalbeño!",
       search: "Search services, hotlines, barangays…",
       sos: "Emergency: call Montalban Hotline 911",
       sosCall: "Call",
@@ -333,7 +333,7 @@
     }).join("");
 
     view.innerHTML =
-      '<section class="hero"><h2><span class="script">' + t("welcomeA") + '</span><span class="big">' + t("welcomeB") + "</span></h2><p>" + esc(L(DATA.town.tagline)) + "</p>" +
+      '<section class="hero"><h2><span class="script">' + t("welcomeA") + '</span><span class="big">' + t("welcomeB") + "</span></h2>" +
       '<form id="search-form" role="search"><input id="q" class="search" type="search" placeholder="' + t("search") + '" aria-label="' + t("search") + '"></form></section>' +
       '<a class="hotline911" href="tel:911" aria-label="' + t("sos") + '"><span class="hl-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>' +
       '<span class="hl-label" aria-hidden="true"><span class="hl-top">MONTALBAN</span><span class="hl-pill">HOTLINE</span></span>' +

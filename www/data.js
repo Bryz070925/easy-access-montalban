@@ -10,11 +10,7 @@ window.APP_DATA = {
     // From the official "Bayan ng Montalban" Facebook page.
     address: "J.P. Rizal St., Brgy. Balite, Rodriguez (Montalban), Rizal 1860",
     website: "https://montalban.gov.ph",
-    email: "montalbanpublicinformation@gmail.com",
-    tagline: {
-      fil: "Serbisyo at impormasyon ng bayan, abot-kamay.",
-      en: "Town services and information, at your fingertips."
-    }
+    email: "montalbanpublicinformation@gmail.com"
   },
 
   hotlines: [
