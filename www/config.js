@@ -4,6 +4,6 @@
 // in supabase/schema.sql decide what it can do. Leave both empty to run without
 // the online features.
 window.APP_CONFIG = {
-  supabaseUrl: "",
-  supabaseAnonKey: ""
+  supabaseUrl: "https://jvgbcqwyfnfqbmlhsigj.supabase.co",
+  supabaseAnonKey: "sb_publishable_Zuz6heiJ85MuM-FXe7akgg_SMCmcTun"
 };
