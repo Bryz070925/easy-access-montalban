@@ -43,6 +43,10 @@ turn **off** "Allow new users to sign up" → **Save**.
 
 ## 4. Add staff accounts
 
+> **Easier way:** after step 7, admins can add, change and remove staff from the
+> app itself (Desk → **Staff**). Use the steps below for the **first** admin
+> account, or if you prefer the Supabase dashboard.
+
 For each staff member:
 
 1. **Authentication** → **Users** → **Add user** → **Create new user**.
@@ -109,6 +113,39 @@ app or share it.
 3. Answer the question and **I-save**. On the resident's phone, open **Magtanong** →
    **Aking mga tanong** → **I-refresh** to see the answer.
 4. In the Desk, open **Mag-post ng anunsyo** to post an announcement. It appears on Home.
+
+## 7. Let admins manage staff from the app
+
+This adds the **Staff** tab to the Desk, where admins can create staff accounts,
+change their office, reset passwords and remove access without opening Supabase.
+
+1. **Update the database.** Run [`supabase/schema.sql`](supabase/schema.sql) again
+   (SQL Editor → New query → paste everything → **Run**). It adds an "admin"
+   setting to staff accounts. Staff who handle **all offices** (`office_id` null)
+   become the first admins automatically.
+2. **Add the server function.** It holds the secret key needed to create logins,
+   so that key never goes inside the app.
+   1. Open this link and copy **all** the text:
+      <https://raw.githubusercontent.com/Bryz070925/easy-access-montalban/main/supabase/functions/staff-admin/index.ts>
+   2. Supabase → **Edge Functions** → **Deploy a new function** → **Via Editor**.
+   3. Name it exactly **`staff-admin`**, replace the sample code with what you
+      copied, and click **Deploy function**.
+   4. In the function's **Details** (or **Settings**), turn **off** "Verify JWT"
+      / "Enforce JWT verification" and save. The function checks the login
+      itself and only accepts admins.
+3. **Log out and back in** to the Desk. A **Staff** tab appears for admins.
+
+To make someone else an admin, tick **Admin** on their card in the Staff tab, or run:
+
+```sql
+update public.staff set is_admin = true
+where user_id = (select id from auth.users where email = 'juan@example.com');
+```
+
+If the Staff tab says the function isn't deployed, check that its name is exactly
+`staff-admin`. If it shows "Server error: Invalid API key", go to
+**Project Settings → API Keys** and make sure the legacy **service_role** key is
+enabled. The function uses it automatically; you never paste it anywhere.
 
 ## Good to know
 

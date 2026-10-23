@@ -331,6 +331,7 @@ h3 { font-size: 1rem; font-weight: 700; margin: 0; line-height: 1.3; }
 /* ---------- Cards & lists ---------- */
 
 .list { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 10px; }
+.list > li { min-width: 0; } /* long text (e.g. office names) must not stretch cards */
 
 .card {
   background: var(--card);
@@ -757,3 +758,29 @@ h4 { font-size: .92rem; font-weight: 800; margin: 0 0 4px; }
 .desk-actions { display: flex; gap: 8px; }
 .desk-actions select { flex: 1; }
 .ann-tools { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+/* ---------- Staff management ---------- */
+
+.form h3 { font-size: 1.05rem; font-weight: 800; }
+.pw-row { display: flex; gap: 8px; }
+.pw-row input { flex: 1; min-width: 0; }
+.check { display: flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 600; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--green); }
+.creds { margin-bottom: 8px; background: var(--accent-soft); box-shadow: none; }
+.creds-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+.creds .actions { margin: 8px 0 0; }
+.mono { font-family: ui-monospace, monospace; letter-spacing: .5px; }
+.badges { display: flex; gap: 6px; }
+.staff-edit { display: flex; align-items: center; gap: 12px; margin: 12px 0; }
+.staff-edit select {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: .88rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+.staff .actions { margin-bottom: 0; }

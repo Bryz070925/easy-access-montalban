@@ -10,6 +10,8 @@
 --   * Staff (log in; listed in public.staff): read and answer inquiries for
 --     their office (or all offices if office_id is null), post and delete
 --     announcements.
+--   * Admins (staff with is_admin): also add, change and remove staff from the
+--     app's Desk, through the "staff-admin" Edge Function.
 
 create extension if not exists pgcrypto;
 
@@ -21,6 +23,11 @@ create table if not exists public.staff (
   office_id    text,                       -- null = can see every office
   created_at   timestamptz not null default now()
 );
+-- Admins can manage staff from the app (added after the first version).
+alter table public.staff add column if not exists is_admin boolean not null default false;
+-- First run after upgrading: make the all-offices staff the first admins.
+update public.staff set is_admin = true
+where office_id is null and not exists (select 1 from public.staff where is_admin);
 
 create table if not exists public.inquiries (
   id           uuid primary key default gen_random_uuid(),
@@ -172,10 +179,11 @@ language sql stable security definer set search_path = public as $$
 $$;
 
 -- Who am I? (lets the app show the staff Desk only to staff)
-create or replace function public.whoami()
-returns table (display_name text, office_id text)
+drop function if exists public.whoami();
+create function public.whoami()
+returns table (display_name text, office_id text, is_admin boolean)
 language sql stable security definer set search_path = public as $$
-  select s.display_name, s.office_id from public.staff s where s.user_id = auth.uid();
+  select s.display_name, s.office_id, s.is_admin from public.staff s where s.user_id = auth.uid();
 $$;
 
 -- Supabase grants new functions to anon/authenticated by default, so revoke

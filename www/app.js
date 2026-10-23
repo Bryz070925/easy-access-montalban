@@ -135,7 +135,7 @@
       deskNotSetup: "Hindi pa naka-set up ang online na sistema. Tingnan ang SUPABASE-SETUP.md sa repository.",
       allOffices: "Lahat ng opisina",
       tabInquiries: "Mga tanong",
-      tabPost: "Mag-post ng anunsyo",
+      tabPost: "Anunsyo",
       from: "Mula kay",
       save: "I-save",
       saved: "Na-save!",
@@ -158,6 +158,27 @@
       none: "— Wala —",
       noneYet: "Wala pa.",
       inquiryCount: "tanong",
+      tabStaff: "Staff",
+      addStaff: "Magdagdag ng staff",
+      staffName: "Pangalan (makikita sa mga sagot)",
+      tempPassword: "Pansamantalang password",
+      generate: "Gumawa",
+      officeAccess: "Opisinang hahawakan",
+      allOfficesOpt: "Lahat ng opisina",
+      makeAdmin: "Admin: puwedeng mag-manage ng staff",
+      createStaff: "Gumawa ng account",
+      staffCreated: "Nagawa na ang account. Ibigay ito sa staff:",
+      pwChanged: "Napalitan ang password. Ibigay ito sa staff:",
+      credsNote: "Ipadala nang pribado (hal. personal na mensahe), hindi sa group chat. Puwedeng ipa-reset ulit kung kailangan.",
+      staffList: "Mga staff",
+      adminBadge: "Admin",
+      youBadge: "Ikaw",
+      resetPw: "Reset password",
+      removeStaff: "Alisin",
+      removeConfirm: "Alisin ang staff na ito? Hindi na siya makakapag-login.",
+      resetConfirm: "Gumawa ng bagong password para sa staff na ito?",
+      fnNotDeployed: "Hindi pa naka-deploy ang \u201cstaff-admin\u201d function sa Supabase. Tingnan ang SUPABASE-SETUP.md, step 7.",
+      pwRule: "8 character pataas",
       desk: "Desk"
     },
     en: {
@@ -289,7 +310,7 @@
       deskNotSetup: "The online system isn't set up yet. See SUPABASE-SETUP.md in the repository.",
       allOffices: "All offices",
       tabInquiries: "Inquiries",
-      tabPost: "Post announcement",
+      tabPost: "Announcements",
       from: "From",
       save: "Save",
       saved: "Saved!",
@@ -312,6 +333,27 @@
       none: "— None —",
       noneYet: "None yet.",
       inquiryCount: "inquiries",
+      tabStaff: "Staff",
+      addStaff: "Add staff",
+      staffName: "Name (shown on replies)",
+      tempPassword: "Temporary password",
+      generate: "Generate",
+      officeAccess: "Office they handle",
+      allOfficesOpt: "All offices",
+      makeAdmin: "Admin: can manage staff",
+      createStaff: "Create account",
+      staffCreated: "Account created. Give this to the staff member:",
+      pwChanged: "Password changed. Give this to the staff member:",
+      credsNote: "Send it privately (e.g. a direct message), not in a group chat. You can reset it again anytime.",
+      staffList: "Staff",
+      adminBadge: "Admin",
+      youBadge: "You",
+      resetPw: "Reset password",
+      removeStaff: "Remove",
+      removeConfirm: "Remove this staff member? They will no longer be able to log in.",
+      resetConfirm: "Create a new password for this staff member?",
+      fnNotDeployed: "The \u201cstaff-admin\u201d function isn't deployed in Supabase yet. See SUPABASE-SETUP.md, step 7.",
+      pwRule: "8 characters or more",
       desk: "Desk"
     }
   };
@@ -819,6 +861,7 @@
         }
         s.name = rows[0].display_name;
         s.office = rows[0].office_id;
+        s.admin = !!rows[0].is_admin;
         setJSON(SESSION_KEY, s);
         return s;
       });
@@ -1070,15 +1113,32 @@
     }
     var s = getJSON(SESSION_KEY, null);
     if (!s) return renderDeskLogin();
+    if (!("admin" in s)) {
+      // Logged in before admins existed: look up the admin flag once.
+      return staffRequest("POST", "/rest/v1/rpc/whoami", {}).then(function (rows) {
+        s.admin = !!(rows && rows[0] && rows[0].is_admin);
+        setJSON(SESSION_KEY, s);
+        drawDesk(s, tab);
+      }).catch(function (e) {
+        if (e.status === 401) return route();
+        drawDesk(s, tab); // offline: show the Desk without the Staff tab, retry next time
+      });
+    }
+    drawDesk(s, tab);
+  }
+
+  function drawDesk(s, tab) {
     view.innerHTML = '<div class="desk-head"><div><h2>' + t("deskTitle") + '</h2><div class="muted">' + esc(s.name) + " · " +
       esc(s.office ? officeLabel(s.office) : t("allOffices")) + '</div></div><button id="logout" class="btn ghost small" type="button">' +
       ic("log-out", 16) + t("logout") + "</button></div>" +
-      segTabs(tab === "post" ? "post" : "inq", [
+      segTabs(tab === "post" || (tab === "staff" && s.admin) ? tab : "inq", [
         ["#/desk", "inq", ic("inbox", 16) + t("tabInquiries")],
         ["#/desk/post", "post", ic("megaphone", 16) + t("tabPost")]
-      ]) + '<div id="desk-body"></div>';
+      ].concat(s.admin ? [["#/desk/staff", "staff", ic("user-cog", 16) + t("tabStaff")]] : [])) + '<div id="desk-body"></div>';
     document.getElementById("logout").addEventListener("click", function () { staffLogout(); location.hash = "#/"; });
-    if (tab === "post") deskPost(s); else deskInquiries();
+    if (tab === "post") deskPost(s);
+    else if (tab === "staff" && s.admin) deskStaff(s);
+    else deskInquiries();
   }
 
   function renderDeskLogin() {
@@ -1230,6 +1290,148 @@
       if (!b || !confirm(t("deleteConfirm"))) return;
       staffRequest("DELETE", "/rest/v1/announcements?id=eq." + encodeURIComponent(b.getAttribute("data-id"))).then(load)
         .catch(function (ex) { alert(ex.status ? ex.message : t("netError")); });
+    });
+    load();
+  }
+
+  // ---------- Staff management (admins only, via the "staff-admin" Edge Function) ----------
+
+  function staffFn(action, payload) {
+    return freshSession().then(function (sess) {
+      return fetch(CFG.supabaseUrl.replace(/\/$/, "") + "/functions/v1/staff-admin", {
+        method: "POST",
+        headers: { apikey: CFG.supabaseAnonKey, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json" },
+        body: JSON.stringify(Object.assign({ action: action }, payload || {}))
+      });
+    }).then(function (r) {
+      return r.text().then(function (txt) {
+        var data = null;
+        try { data = txt ? JSON.parse(txt) : null; } catch (e) { data = null; }
+        if (!r.ok) {
+          // Supabase answers 404 without an "error" field when the function isn't deployed.
+          var err = new Error(r.status === 404 && !(data && data.error) ? t("fnNotDeployed") : (data && data.error) || "HTTP " + r.status);
+          err.status = r.status;
+          throw err;
+        }
+        return data;
+      });
+    });
+  }
+
+  // Readable random password (no 0/O, 1/l/I).
+  function makePassword() {
+    var abc = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    var a = new Uint8Array(12);
+    crypto.getRandomValues(a);
+    return Array.prototype.map.call(a, function (b) { return abc[b % abc.length]; }).join("");
+  }
+
+  function credsBox(label, email, password) {
+    var text = email + "\n" + password;
+    return '<div class="card creds"><div class="reply-label">' + ic("circle-check", 16) + esc(label) + "</div>" +
+      '<div class="creds-row"><span class="muted small">' + t("email2") + "</span><b>" + esc(email) + "</b></div>" +
+      '<div class="creds-row"><span class="muted small">' + t("password") + '</span><b class="mono">' + esc(password) + "</b></div>" +
+      '<p class="muted small">' + t("credsNote") + "</p>" + shareButtons({ text: text, subject: "Bayan ng Montalban Staff Desk" }) + "</div>";
+  }
+
+  function staffCard(m) {
+    var badges = (m.is_admin ? '<span class="pill st-answered">' + t("adminBadge") + "</span>" : "") +
+      (m.me ? '<span class="pill">' + t("youBadge") + "</span>" : "");
+    return '<li class="card staff" data-id="' + esc(m.user_id) + '"><div class="inq-head"><h3>' + esc(m.display_name) + '</h3><span class="badges">' + badges + "</span></div>" +
+      '<div class="muted">' + esc(m.email) + "</div>" +
+      '<div class="staff-edit"><select class="js-office" aria-label="' + t("officeAccess") + '">' +
+      officeOptions(m.office_id || "", t("allOfficesOpt")) + "</select>" +
+      '<label class="check"><input type="checkbox" class="js-admin"' + (m.is_admin ? " checked" : "") + (m.me ? " disabled" : "") + "> " + t("adminBadge") + "</label></div>" +
+      '<div class="actions"><button type="button" class="btn small js-save">' + ic("check", 16) + t("save") + "</button>" +
+      '<button type="button" class="btn ghost small js-reset">' + ic("lock", 16) + t("resetPw") + "</button>" +
+      (m.me ? "" : '<button type="button" class="btn danger small js-remove">' + ic("trash-2", 16) + t("removeStaff") + "</button>") +
+      "</div></li>";
+  }
+
+  function deskStaff() {
+    var body = document.getElementById("desk-body");
+    body.innerHTML = '<form id="staff-form" class="card form" novalidate><h3>' + t("addStaff") + "</h3>" +
+      field(t("staffName"), '<input name="display_name" required minlength="2" maxlength="80" placeholder="Juan dela Cruz">', true) +
+      field(t("email2"), '<input name="email" type="email" required autocomplete="off">', true) +
+      field(t("tempPassword"), '<div class="pw-row"><input name="password" required minlength="8" maxlength="72" autocomplete="new-password" placeholder="' + t("pwRule") + '">' +
+        '<button type="button" class="btn ghost small js-gen">' + ic("refresh-cw", 16) + t("generate") + "</button></div>", true) +
+      field(t("officeAccess"), '<select name="office_id">' + officeOptions("", t("allOfficesOpt")) + "</select>") +
+      '<label class="check"><input type="checkbox" name="is_admin"> ' + t("makeAdmin") + "</label>" +
+      '<p id="form-error" class="error" role="alert" hidden></p>' +
+      '<button class="btn wide" type="submit">' + ic("user-cog", 18) + t("createStaff") + "</button></form>" +
+      '<div id="creds"></div><div class="section-label">' + t("staffList") + '</div><p id="staff-status" class="muted small"></p><ul class="list" id="staff-list"></ul>';
+
+    var form = document.getElementById("staff-form");
+    var err = document.getElementById("form-error");
+    var list = document.getElementById("staff-list");
+    var status = document.getElementById("staff-status");
+    var creds = document.getElementById("creds");
+
+    function showCreds(label, email, password) {
+      creds.innerHTML = credsBox(label, email, password);
+      wireShareButtons(creds, { text: email + "\n" + password, subject: "Bayan ng Montalban Staff Desk" });
+      creds.scrollIntoView({ block: "center" });
+    }
+    function fail(ex) {
+      if (ex.status === 401) return route();
+      alert(ex.status ? ex.message : t("netError"));
+    }
+    function load() {
+      status.textContent = "…";
+      staffFn("list").then(function (d) {
+        list.innerHTML = d.staff.map(staffCard).join("");
+        status.textContent = d.staff.length + " " + t("tabStaff").toLowerCase();
+      }).catch(function (ex) {
+        if (ex.status === 401) return route();
+        status.textContent = ex.status ? ex.message : t("netError");
+      });
+    }
+
+    form.querySelector(".js-gen").addEventListener("click", function () { form.password.value = makePassword(); err.hidden = true; });
+    form.addEventListener("input", function () { err.hidden = true; });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { err.textContent = t("fillRequired"); err.hidden = false; form.classList.add("touched"); return; }
+      var btn = form.querySelector("button[type=submit]");
+      var email = form.email.value.trim(), password = form.password.value;
+      btn.disabled = true;
+      staffFn("create", {
+        display_name: form.display_name.value.trim(), email: email, password: password,
+        office_id: form.office_id.value || null, is_admin: form.is_admin.checked
+      }).then(function () {
+        btn.disabled = false;
+        form.reset();
+        form.classList.remove("touched");
+        showCreds(t("staffCreated"), email, password);
+        load();
+      }).catch(function (ex) {
+        btn.disabled = false;
+        if (ex.status === 401) return route();
+        err.textContent = ex.status ? ex.message : t("netError");
+        err.hidden = false;
+      });
+    });
+
+    list.addEventListener("click", function (e) {
+      var b = e.target.closest("button");
+      var li = b && b.closest("[data-id]");
+      if (!li) return;
+      var id = li.getAttribute("data-id");
+      var email = li.querySelector(".muted").textContent;
+      if (b.classList.contains("js-save")) {
+        b.disabled = true;
+        staffFn("update", { user_id: id, office_id: li.querySelector(".js-office").value || null, is_admin: li.querySelector(".js-admin").checked })
+          .then(function () { b.disabled = false; b.innerHTML = ic("check", 16) + t("saved"); setTimeout(load, 900); })
+          .catch(function (ex) { b.disabled = false; fail(ex); });
+      } else if (b.classList.contains("js-reset")) {
+        if (!confirm(t("resetConfirm"))) return;
+        var pw = makePassword();
+        staffFn("reset_password", { user_id: id, password: pw })
+          .then(function () { showCreds(t("pwChanged"), email, pw); }).catch(fail);
+      } else if (b.classList.contains("js-remove")) {
+        if (!confirm(t("removeConfirm"))) return;
+        staffFn("remove", { user_id: id }).then(load).catch(fail);
+      }
     });
     load();
   }
